@@ -1,4 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
+import { ScrollToTop } from "./components/ScrollToTop"; 
 import { SiteHeader } from "./components/site-header";
 import { SiteFooter } from "./components/site-footer";
 import { FloatingActions } from "./components/floating-actions";
@@ -19,7 +20,6 @@ import PayoneerPage from "./pages/services/PayoneerPage";
 import PayPalPage from "./pages/services/PayPalPage";
 import StripePage from "./pages/services/StripePage";
 import ShopifyPage from "./pages/services/ShopifyPage";
-
 
 function NotFoundPage() {
   return (
@@ -48,6 +48,9 @@ function NotFoundPage() {
 export default function App() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      {/* Yahan ScrollToTop lagaya gaya hai jo background mein kaam karega  */}
+      <ScrollToTop />
+      
       <SiteHeader />
       <main className="flex-1">
         <Routes>
