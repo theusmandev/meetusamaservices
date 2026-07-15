@@ -25,24 +25,20 @@ import ShopifyPage from "./pages/services/ShopifyPage";
 
 function NotFoundPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-background">
-      <SiteHeader />
-      <div className="flex flex-1 items-center justify-center px-4 py-24">
-        <div className="max-w-md text-center">
-          <h1 className="font-display text-8xl font-black text-gradient-gold">404</h1>
-          <h2 className="mt-4 font-display text-2xl font-bold">Page not found</h2>
-          <p className="mt-3 text-sm text-muted-foreground">
-            The page you're looking for doesn't exist or has been moved.
-          </p>
-          <Link
-            to="/"
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-[color:var(--gold)] px-6 py-3 text-sm font-semibold text-black transition hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
-          >
-            Back to home
-          </Link>
-        </div>
+    <div className="flex flex-1 items-center justify-center px-4 py-24">
+      <div className="max-w-md text-center">
+        <h1 className="font-display text-8xl font-black text-gradient-gold">404</h1>
+        <h2 className="mt-4 font-display text-2xl font-bold">Page not found</h2>
+        <p className="mt-3 text-sm text-muted-foreground">
+          The page you're looking for doesn't exist or has been moved.
+        </p>
+        <Link
+          to="/"
+          className="mt-8 inline-flex items-center justify-center rounded-full bg-[color:var(--gold)] px-6 py-3 text-sm font-semibold text-black transition hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
+        >
+          Back to home
+        </Link>
       </div>
-      <SiteFooter />
     </div>
   );
 }
