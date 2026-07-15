@@ -80,9 +80,11 @@ interface RefundPolicyModalProps {
   onAgree: () => void;
   onCancel: () => void;
   submitting: boolean;
+  serviceFee: string;   // formatted e.g. "PKR 50,000" or empty string
+  refundAmount: string; // formatted e.g. "PKR 49,000" or empty string
 }
 
-function RefundPolicyModal({ onAgree, onCancel, submitting }: RefundPolicyModalProps) {
+function RefundPolicyModal({ onAgree, onCancel, submitting, serviceFee, refundAmount }: RefundPolicyModalProps) {
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
@@ -146,23 +148,29 @@ function RefundPolicyModal({ onAgree, onCancel, submitting }: RefundPolicyModalP
             </ul>
 
             {/* Refund Breakdown Box */}
-            <div className="mb-4 rounded-lg border border-border/50 bg-background/50 p-4 shadow-sm">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-emerald-400/80">Refund Breakdown</p>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Service Fee:</span>
-                  <span className="font-medium text-foreground">PKR 5,000</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Processing Fee (deducted):</span>
-                  <span className="font-medium text-foreground">PKR 1,000</span>
-                </div>
-                <div className="mt-3 flex justify-between items-center border-t border-border/50 pt-3">
-                  <span className="font-semibold text-foreground">Amount Refunded:</span>
-                  <strong className="text-lg text-[color:var(--gold)]">PKR 4,000</strong>
+            {serviceFee ? (
+              <div className="mb-4 rounded-lg border border-border/50 bg-background/50 p-4 shadow-sm">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-emerald-400/80">Refund Breakdown</p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Service Fee:</span>
+                    <span className="font-medium text-foreground">{serviceFee}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Processing Fee (deducted):</span>
+                    <span className="font-medium text-foreground">PKR 1,000</span>
+                  </div>
+                  <div className="mt-3 flex justify-between items-center border-t border-border/50 pt-3">
+                    <span className="font-semibold text-foreground">Amount Refunded:</span>
+                    <strong className="text-lg text-[color:var(--gold)]">{refundAmount}</strong>
+                  </div>
                 </div>
               </div>
-            </div>
+            ) : (
+              <div className="mb-4 rounded-lg border border-border/50 bg-background/50 px-4 py-3 text-sm text-muted-foreground italic shadow-sm">
+                Service fee will be confirmed by our team.
+              </div>
+            )}
 
             {/* Highlighted note */}
             <div className="flex items-center gap-2.5 rounded-lg bg-emerald-500/10 px-4 py-3 text-emerald-400">
@@ -234,9 +242,10 @@ export default function PaymentPage() {
   const prefilledPrice   = searchParams.get("price")   || "";
 
   // Format price for display: "5000" → "PKR 5,000"
-  const displayPrice = prefilledPrice
-    ? `PKR ${Number(prefilledPrice).toLocaleString("en-PK")}`
-    : "";
+  const formatPKR = (n: number) => `PKR ${n.toLocaleString("en-PK")}`;
+  const displayPrice  = prefilledPrice ? formatPKR(Number(prefilledPrice)) : "";
+  const serviceFee    = prefilledPrice ? formatPKR(Number(prefilledPrice)) : "";
+  const refundAmount  = prefilledPrice ? formatPKR(Math.max(0, Number(prefilledPrice) - 1000)) : "";
 
   const [name,        setName]        = useState("");
   const [whatsapp,    setWhatsapp]    = useState("");
@@ -369,6 +378,8 @@ export default function PaymentPage() {
           onAgree={performSubmit}
           onCancel={() => setShowModal(false)}
           submitting={submitting}
+          serviceFee={serviceFee}
+          refundAmount={refundAmount}
         />
       )}
 
