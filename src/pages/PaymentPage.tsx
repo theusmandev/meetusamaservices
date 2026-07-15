@@ -1,6 +1,6 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
-import { Copy, Check, Upload, Loader2, CheckCircle2, ArrowLeft } from "lucide-react";
+import { Copy, Check, Upload, Loader2, CheckCircle2, ArrowLeft, Info, X, Clock } from "lucide-react";
 import { PageHero } from "../components/page-hero";
 
 // 🔧 Yahan apna Google Apps Script Web App URL daalein (deploy karne ke baad milega)
@@ -75,20 +75,186 @@ function CopyField({ label, value }: { label: string; value: string }) {
   );
 }
 
+// ─── Refund Policy Modal ──────────────────────────────────────────────────────
+interface RefundPolicyModalProps {
+  onAgree: () => void;
+  onCancel: () => void;
+  submitting: boolean;
+}
+
+function RefundPolicyModal({ onAgree, onCancel, submitting }: RefundPolicyModalProps) {
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="refund-modal-title"
+    >
+      {/* Backdrop */}
+      <div
+        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        onClick={onCancel}
+      />
+
+      {/* Modal card */}
+      <div className="relative z-10 w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl border border-[color:var(--gold)]/30 bg-card p-6 md:p-8 shadow-[var(--shadow-luxe)]">
+        {/* Close button */}
+        <button
+          type="button"
+          onClick={onCancel}
+          className="absolute right-4 top-4 rounded-lg p-1.5 text-muted-foreground transition hover:bg-[color:var(--gold)]/10 hover:text-[color:var(--gold)]"
+          aria-label="Close"
+        >
+          <X className="h-5 w-5" />
+        </button>
+
+        {/* Header */}
+        <h2
+          id="refund-modal-title"
+          className="font-display text-xl font-black md:text-2xl"
+        >
+          Refund{" "}
+          <span className="text-gradient-gold">Policy</span>
+        </h2>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Please read carefully before submitting your payment.
+        </p>
+
+        {/* Policy content */}
+        <div className="mt-5 space-y-4 text-sm text-muted-foreground">
+          {/* Applicable section */}
+          <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-4">
+            <p className="mb-3 font-semibold text-emerald-400">✅ Refund Policy</p>
+            <p className="mb-3 text-foreground">
+              Our services are digital and consultancy-based. Because of this, refunds are handled under the following terms:
+            </p>
+            <ul className="mb-4 space-y-2">
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
+                <span>A refund is only applicable if a delay or issue is caused directly from our side.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
+                <span>
+                  If approved, refunds are <strong>not processed immediately</strong> — they are processed at the end of the current month and transferred on the <strong>10th of the following month.</strong>
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
+                <span>A refund also applies if a third-party platform (Wise, Stripe, PayPal, government body, etc.) rejects the application.</span>
+              </li>
+            </ul>
+
+            {/* Refund Breakdown Box */}
+            <div className="mb-4 rounded-lg border border-border/50 bg-background/50 p-4 shadow-sm">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-emerald-400/80">Refund Breakdown</p>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between items-center">
+                  <span className="text-muted-foreground">Service Fee:</span>
+                  <span className="font-medium text-foreground">PKR 5,000</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-muted-foreground">Processing Fee (deducted):</span>
+                  <span className="font-medium text-foreground">PKR 1,000</span>
+                </div>
+                <div className="mt-3 flex justify-between items-center border-t border-border/50 pt-3">
+                  <span className="font-semibold text-foreground">Amount Refunded:</span>
+                  <strong className="text-lg text-[color:var(--gold)]">PKR 4,000</strong>
+                </div>
+              </div>
+            </div>
+
+            {/* Highlighted note */}
+            <div className="flex items-center gap-2.5 rounded-lg bg-emerald-500/10 px-4 py-3 text-emerald-400">
+              <Clock className="h-5 w-5 shrink-0" />
+              <span>
+                Refund requests are only accepted within <strong>30 days</strong> of payment.
+              </span>
+            </div>
+          </div>
+
+          {/* Non-applicable section */}
+          <div className="rounded-xl border border-red-500/20 bg-red-500/5 p-4">
+            <p className="mb-3 font-semibold text-red-400">❌ Refund will NOT be given if:</p>
+            <ul className="space-y-2">
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-red-400" />
+                <span>The client changes their mind after work has already started.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-red-400" />
+                <span>The client learns the process from us and then requests a refund.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-red-400" />
+                <span>Required documents or information were not provided by the client.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-red-400" />
+                <span>The refund involves government or platform fees, which are non-refundable in some cases.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Footer Note */}
+        <p className="mt-6 text-center text-xs leading-relaxed text-muted-foreground">
+          By proceeding with payment, you confirm that you have read and agree to this refund policy.
+        </p>
+
+        {/* Actions */}
+        <div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row">
+          <button
+            type="button"
+            onClick={onCancel}
+            disabled={submitting}
+            className="flex flex-1 items-center justify-center rounded-full border border-border px-5 py-3 text-sm font-semibold transition hover:border-[color:var(--gold)] hover:text-[color:var(--gold)] disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            onClick={onAgree}
+            disabled={submitting}
+            className="flex flex-1 items-center justify-center gap-2 rounded-full bg-[color:var(--gold)] px-5 py-3 text-sm font-semibold text-black transition hover:bg-[color:var(--gold-hover)] hover:scale-[1.02] hover:shadow-lg hover:shadow-[color:var(--gold)]/20 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {submitting && <Loader2 className="h-4 w-4 animate-spin" />}
+            {submitting ? "Submitting…" : "I Agree & Submit"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Main Page ────────────────────────────────────────────────────────────────
 export default function PaymentPage() {
   const [searchParams] = useSearchParams();
   const prefilledService = searchParams.get("service") || "";
+  const prefilledPrice   = searchParams.get("price")   || "";
 
-  const [name, setName] = useState("");
-  const [whatsapp, setWhatsapp] = useState("");
-  const [service, setService] = useState(prefilledService);
-  const [method, setMethod] = useState<MethodKey | "">("");
-  const [message, setMessage] = useState("");
-  const [file, setFile] = useState<File | null>(null);
-  const [fileError, setFileError] = useState("");
-  const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  // Format price for display: "5000" → "PKR 5,000"
+  const displayPrice = prefilledPrice
+    ? `PKR ${Number(prefilledPrice).toLocaleString("en-PK")}`
+    : "";
+
+  const [name,        setName]        = useState("");
+  const [whatsapp,    setWhatsapp]    = useState("");
+  const [service,     setService]     = useState(prefilledService);
+  const [method,      setMethod]      = useState<MethodKey | "">("");
+  const [message,     setMessage]     = useState("");
+  const [file,        setFile]        = useState<File | null>(null);
+  const [fileError,   setFileError]   = useState("");
+  const [submitting,  setSubmitting]  = useState(false);
+  const [submitted,   setSubmitted]   = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const [showModal,   setShowModal]   = useState(false);
+
+  useEffect(() => {
+    if (submitted) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [submitted]);
 
   const selectedMethod = useMemo(() => (method ? PAYMENT_METHODS[method] : null), [method]);
 
@@ -116,7 +282,8 @@ export default function PaymentPage() {
       reader.readAsDataURL(f);
     });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // Validate → open modal (actual fetch happens in performSubmit)
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitError("");
 
@@ -125,18 +292,27 @@ export default function PaymentPage() {
       return;
     }
 
+    // Validation passed — show the refund policy modal
+    setShowModal(true);
+  };
+
+  // Called when user clicks "I Agree & Submit" inside the modal
+  const performSubmit = async () => {
+    setShowModal(false);
     setSubmitting(true);
+    setSubmitError("");
     try {
-      const base64File = await fileToBase64(file);
+      const base64File = await fileToBase64(file!);
 
       const payload = {
         name,
         whatsapp,
         service,
+        price: displayPrice || "To be confirmed",
         paymentMethod: selectedMethod?.label,
         message,
-        fileName: file.name,
-        fileType: file.type,
+        fileName: file!.name,
+        fileType: file!.type,
         fileData: base64File,
       };
 
@@ -150,7 +326,7 @@ export default function PaymentPage() {
       if (!result.success) throw new Error(result.error || "Submission failed");
 
       setSubmitted(true);
-    } catch (err) {
+    } catch {
       setSubmitError("Kuch masla ho gaya. Please dobara koshish karein ya WhatsApp par sample bhejein.");
     } finally {
       setSubmitting(false);
@@ -187,6 +363,15 @@ export default function PaymentPage() {
 
   return (
     <>
+      {/* Refund policy modal */}
+      {showModal && (
+        <RefundPolicyModal
+          onAgree={performSubmit}
+          onCancel={() => setShowModal(false)}
+          submitting={submitting}
+        />
+      )}
+
       <PageHero
         eyebrow="Payment"
         title={<>Complete Your <span className="text-gradient-gold">Payment.</span></>}
@@ -237,6 +422,33 @@ export default function PaymentPage() {
                 placeholder="e.g. UK LTD Registration"
                 className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition focus:border-[color:var(--gold)]"
               />
+            </div>
+
+            {/* Amount to Pay — auto-filled from URL, read-only */}
+            {displayPrice ? (
+              <div>
+                <label className="mb-2 block text-sm font-semibold">Amount to Pay</label>
+                <div className="flex items-center gap-3 rounded-xl border border-[color:var(--gold)]/40 bg-[color:var(--gold)]/5 px-4 py-3">
+                  <span className="font-mono text-2xl font-black text-[#252525]">
+                    {displayPrice}
+                  </span>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <label className="mb-2 block text-sm font-semibold">Amount to Pay</label>
+                <div className="rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-muted-foreground italic">
+                  Amount will be confirmed by our team.
+                </div>
+              </div>
+            )}
+
+            {/* ── Task 1: Instruction note above payment method selector ── */}
+            <div className="flex items-start gap-3 rounded-xl border border-[color:var(--gold)]/30 bg-[color:var(--gold)]/8 px-4 py-3.5">
+              <Info className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--gold)]" />
+              <p className="text-sm leading-relaxed text-[color:var(--gold)]/90">
+                <strong>How to pay:</strong> Select a payment method below, transfer the exact amount to the account details shown, take a screenshot of the transaction, upload it here, and then hit Submit.
+              </p>
             </div>
 
             {/* Payment method */}
@@ -310,7 +522,7 @@ export default function PaymentPage() {
               className="flex w-full items-center justify-center gap-2 rounded-full bg-[color:var(--gold)] px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-[color:var(--gold-hover)] hover:scale-[1.02] hover:shadow-lg hover:shadow-[color:var(--gold)]/20 disabled:cursor-not-allowed disabled:opacity-60"
             >
               {submitting && <Loader2 className="h-4 w-4 animate-spin" />}
-              {submitting ? "Submitting..." : "Submit Payment Details"}
+              {submitting ? "Submitting… please wait😊" : "Submit Payment Details"}
             </button>
           </form>
         </div>
