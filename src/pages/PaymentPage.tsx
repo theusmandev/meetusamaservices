@@ -402,9 +402,13 @@ export default function PaymentPage() {
             {/* Name + WhatsApp */}
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
-                <label className="mb-2 block text-sm font-semibold">Name</label>
+                <label className="mb-2 block text-sm font-semibold">
+                  Name <span className="text-red-500">*</span>
+                </label>
                 <input
                   required
+                  name="name"
+                  autoComplete="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Your full name"
@@ -412,9 +416,13 @@ export default function PaymentPage() {
                 />
               </div>
               <div>
-                <label className="mb-2 block text-sm font-semibold">WhatsApp No.</label>
+                <label className="mb-2 block text-sm font-semibold">
+                  WhatsApp No. <span className="text-red-500">*</span>
+                </label>
                 <input
                   required
+                  name="tel"
+                  autoComplete="tel"
                   value={whatsapp}
                   onChange={(e) => setWhatsapp(e.target.value)}
                   placeholder="+92 3XX XXXXXXX"
@@ -425,7 +433,9 @@ export default function PaymentPage() {
 
             {/* Service */}
             <div>
-              <label className="mb-2 block text-sm font-semibold">Service Required</label>
+              <label className="mb-2 block text-sm font-semibold">
+                Service Required <span className="text-red-500">*</span>
+              </label>
               <input
                 required
                 value={service}
@@ -464,7 +474,9 @@ export default function PaymentPage() {
 
             {/* Payment method */}
             <div>
-              <label className="mb-2 block text-sm font-semibold">Select Payment Method</label>
+              <label className="mb-2 block text-sm font-semibold">
+                Select Payment Method <span className="text-red-500">*</span>
+              </label>
               <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
                 {(Object.keys(PAYMENT_METHODS) as MethodKey[]).map((key) => (
                   <button
@@ -497,7 +509,9 @@ export default function PaymentPage() {
 
             {/* Upload screenshot */}
             <div>
-              <label className="mb-2 block text-sm font-semibold">Upload Payment Screenshot</label>
+              <label className="mb-2 block text-sm font-semibold">
+                Upload Payment Screenshot <span className="text-red-500">*</span>
+              </label>
               <label className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-border bg-background px-4 py-8 text-center transition hover:border-[color:var(--gold)]/50">
                 <Upload className="h-6 w-6 text-muted-foreground" />
                 <span className="text-sm text-muted-foreground">
@@ -517,6 +531,8 @@ export default function PaymentPage() {
             <div>
               <label className="mb-2 block text-sm font-semibold">Any message for us</label>
               <textarea
+                name="message"
+                autoComplete="off"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 rows={4}
