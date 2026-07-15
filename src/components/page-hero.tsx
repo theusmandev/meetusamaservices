@@ -72,7 +72,7 @@ export function CTABand() {
                 to="/contact"
                 className="inline-flex items-center justify-center rounded-full bg-[color:var(--gold)] px-7 py-3.5 text-sm font-semibold text-black transition hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
               >
-                Order Service Now!
+                Send Us a Message
               </Link>
               <Link
                 to="/services"

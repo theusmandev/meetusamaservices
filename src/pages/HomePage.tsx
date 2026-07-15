@@ -281,7 +281,7 @@ function Hero() {
                 to="/contact"
                 className="group inline-flex items-center gap-2 rounded-full bg-[color:var(--gold)] px-6 py-3.5 text-sm font-semibold text-black shadow-[0_15px_40px_-12px_rgba(219,166,38,0.7)] transition hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
               >
-                Order Service Now!
+                Send Us a Message
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </Link>
               <Link

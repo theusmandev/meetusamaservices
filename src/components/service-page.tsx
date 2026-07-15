@@ -28,7 +28,7 @@ export function ServicePage({ data }: { data: ServiceDetail }) {
       >
         <div className="flex flex-wrap items-center gap-3">
           <Link
-            to="/contact"
+            to={`/payment?service=${encodeURIComponent((data.title + " " + data.gold).trim().replace(/\.$/, ""))}`}
             className="inline-flex items-center gap-2 rounded-full bg-[color:var(--gold)] px-6 py-3 text-sm font-semibold text-black transition hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
           >
             Start Now <ArrowRight className="h-4 w-4" />
@@ -97,7 +97,7 @@ export function ServicePage({ data }: { data: ServiceDetail }) {
                 </div>
               </div>
               <Link
-                to="/contact"
+                to={`/payment?service=${encodeURIComponent((data.title + " " + data.gold).trim().replace(/\.$/, ""))}`}
                 className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[color:var(--gold)] px-5 py-3 text-sm font-semibold text-black transition hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
               >
                 Order Service Now!
