@@ -1,4 +1,5 @@
 import { PageHero } from "../components/page-hero";
+import { ScrollReveal } from "../components/ScrollReveal";
 
 const sections = [
   { title: "Information we collect", body: "We collect the information you provide when submitting our contact form or engaging our services, including your name, email, phone number, country and business details." },
@@ -14,24 +15,26 @@ export default function PrivacyPage() {
     <>
       <PageHero eyebrow="Legal" title="Privacy Policy" subtitle="Last updated: January 2026" />
       <section className="bg-background py-16 md:py-24">
-        <article className="container-luxe prose prose-neutral mx-auto max-w-3xl">
-          <p className="text-muted-foreground">
-            This page is maintained by Meet Usama Services and describes how we
-            handle personal information collected through our website and during
-            client engagements.
-          </p>
+        <ScrollReveal>
+          <article className="container-luxe prose prose-neutral mx-auto max-w-3xl">
+            <p className="text-muted-foreground">
+              This page is maintained by Meet Usama Services and describes how we
+              handle personal information collected through our website and during
+              client engagements.
+            </p>
 
-          {sections.map((s) => (
-            <div key={s.title} className="mt-10">
-              <h2 className="font-display text-2xl font-bold">{s.title}</h2>
-              <p className="mt-3 text-muted-foreground">{s.body}</p>
-            </div>
-          ))}
+            {sections.map((s) => (
+              <div key={s.title} className="mt-10">
+                <h2 className="font-display text-2xl font-bold">{s.title}</h2>
+                <p className="mt-3 text-muted-foreground">{s.body}</p>
+              </div>
+            ))}
 
-          <p className="mt-10 text-sm text-muted-foreground">
-            Questions about this policy? Contact us at contact@meetusama.com.
-          </p>
-        </article>
+            <p className="mt-10 text-sm text-muted-foreground">
+              Questions about this policy? Contact us at contact@meetusama.com.
+            </p>
+          </article>
+        </ScrollReveal>
       </section>
     </>
   );

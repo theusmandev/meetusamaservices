@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { PageHero } from "../components/page-hero";
 import { Users, Clock, Globe2, ShieldCheck, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { ScrollReveal } from "../components/ScrollReveal";
 
 // Aap ka original Google Apps Script endpoint
 const APPS_SCRIPT_URL =
@@ -74,75 +75,77 @@ export default function ContactPage() {
 
       <section className="bg-background py-20 md:py-28">
         <div className="container-luxe">
-          <div className="grid overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-luxe)] lg:grid-cols-[1fr_1.2fr]">
-            <div className="relative overflow-hidden bg-black p-10 text-white md:p-12">
-              <div
-                className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full opacity-40 blur-3xl"
-                style={{ background: "radial-gradient(circle, #DBA626, transparent 70%)" }}
-              />
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--gold)]">Direct contact</p>
-              <h2 className="mt-3 font-display text-3xl font-black leading-tight">Reach us directly.</h2>
-              <div className="mt-8 space-y-5">
-                {[
-                  { icon: Mail, label: "Email", value: "contact@meetusama.com" },
-                  { icon: Phone, label: "Phone", value: "+447824035366" },
-                  { icon: MapPin, label: "Offices", value: "42 Rose Avenue, London, United Kingdom" },
-                  { icon: Clock, label: "Response Time", value: "Within 24 hours" },
-                  { icon: Globe2, label: "Coverage", value: "Serving 20+ countries" },
-                  { icon: ShieldCheck, label: "Confidentiality", value: "Encrypted, NDA-ready" },
-                ].map((i) => (
-                  <div key={i.label} className="flex items-start gap-3">
-                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/5 text-[color:var(--gold)]">
-                      <i.icon className="h-5 w-5" />
-                    </span>
-                    <div>
-                      <p className="text-[11px] uppercase tracking-widest text-white/50">{i.label}</p>
-                      <p className="text-sm font-semibold text-white">{i.value}</p>
+          <ScrollReveal>
+            <div className="grid overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-luxe)] lg:grid-cols-[1fr_1.2fr]">
+              <div className="relative overflow-hidden bg-black p-10 text-white md:p-12">
+                <div
+                  className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full opacity-40 blur-3xl"
+                  style={{ background: "radial-gradient(circle, #DBA626, transparent 70%)" }}
+                />
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--gold)]">Direct contact</p>
+                <h2 className="mt-3 font-display text-3xl font-black leading-tight">Reach us directly.</h2>
+                <div className="mt-8 space-y-5">
+                  {[
+                    { icon: Mail, label: "Email", value: "contact@meetusama.com" },
+                    { icon: Phone, label: "Phone", value: "+447824035366" },
+                    { icon: MapPin, label: "Offices", value: "42 Rose Avenue, London, United Kingdom" },
+                    { icon: Clock, label: "Response Time", value: "Within 24 hours" },
+                    { icon: Globe2, label: "Coverage", value: "Serving 20+ countries" },
+                    { icon: ShieldCheck, label: "Confidentiality", value: "Encrypted, NDA-ready" },
+                  ].map((i) => (
+                    <div key={i.label} className="flex items-start gap-3">
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/5 text-[color:var(--gold)]">
+                        <i.icon className="h-5 w-5" />
+                      </span>
+                      <div>
+                        <p className="text-[11px] uppercase tracking-widest text-white/50">{i.label}</p>
+                        <p className="text-sm font-semibold text-white">{i.value}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
 
-            <form onSubmit={handleSubmit} className="p-8 md:p-12">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <Input label="Full Name" name="Name" autoComplete="name" required />
-                <Input label="Email" name="Email" type="email" autoComplete="email" required />
-                <Input label="WhatsApp Number" name="WhatsApp" autoComplete="tel" placeholder="+44 7…" />
-                <Input label="Country" name="Country" autoComplete="country-name" placeholder="United Kingdom" />
-                <div className="sm:col-span-2">
-                  <Label>Service Required</Label>
-                  <select name="Service" className={inputCls}>
-                    {["UK LTD Registration", "US LLC Registration", "Wise", "Payoneer", "PayPal", "Stripe", "Shopify", "Amazon", "Other"].map((x) => (
-                      <option key={x}>{x}</option>
-                    ))}
-                  </select>
+              <form onSubmit={handleSubmit} className="p-8 md:p-12">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <Input label="Full Name" name="Name" autoComplete="name" required />
+                  <Input label="Email" name="Email" type="email" autoComplete="email" required />
+                  <Input label="WhatsApp Number" name="WhatsApp" autoComplete="tel" placeholder="+44 7…" />
+                  <Input label="Country" name="Country" autoComplete="country-name" placeholder="United Kingdom" />
+                  <div className="sm:col-span-2">
+                    <Label>Service Required</Label>
+                    <select name="Service" className={inputCls}>
+                      {["UK LTD Registration", "US LLC Registration", "Wise", "Payoneer", "PayPal", "Stripe", "Shopify", "Amazon", "Other"].map((x) => (
+                        <option key={x}>{x}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="sm:col-span-2">
+                    <Label>Message</Label>
+                    <textarea
+                      rows={5}
+                      name="Message"
+                      placeholder="Tell us about your business…"
+                      spellCheck={false}
+                      data-gramm="false"
+                      className={inputCls}
+                    />
+                  </div>
                 </div>
-                <div className="sm:col-span-2">
-                  <Label>Message</Label>
-                  <textarea
-                    rows={5}
-                    name="Message"
-                    placeholder="Tell us about your business…"
-                    spellCheck={false}
-                    data-gramm="false"
-                    className={inputCls}
-                  />
+                <button
+                  type="submit"
+                  disabled={submitting || sent}
+                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--gold)] px-6 py-3.5 text-sm font-semibold text-black transition hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20 disabled:opacity-70"
+                >
+                  {sent ? "Message received" : submitting ? "Sending…" : "Send Message"}{" "}
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+                <div className="mt-6 flex items-center gap-2 text-xs text-muted-foreground">
+                  <Users className="h-4 w-4 text-[color:var(--gold)]" /> 5,000+ businesses served since 2015
                 </div>
-              </div>
-              <button
-                type="submit"
-                disabled={submitting || sent}
-                className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--gold)] px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-[color:var(--gold-hover)] disabled:opacity-70"
-              >
-                {sent ? "Message received" : submitting ? "Sending…" : "Send Message"}{" "}
-                <ArrowRight className="h-4 w-4" />
-              </button>
-              <div className="mt-6 flex items-center gap-2 text-xs text-muted-foreground">
-                <Users className="h-4 w-4 text-[color:var(--gold)]" /> 5,000+ businesses served since 2015
-              </div>
-            </form>
-          </div>
+              </form>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </>

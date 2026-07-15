@@ -3,6 +3,7 @@ import {
   Building2, Landmark, Wallet, CreditCard, DollarSign, Zap, ShoppingBag, Store, FileCheck2, ArrowRight,
 } from "lucide-react";
 import { PageHero, CTABand } from "../components/page-hero";
+import { ScrollReveal } from "../components/ScrollReveal";
 
 const services = [
   { icon: Building2, title: "UK LTD Registration", desc: "Full UK Limited company formation, HMRC compliance and address.", to: "/services/uk-ltd" },
@@ -27,7 +28,7 @@ export default function ServicesPage() {
 
       <section className="bg-background py-20 md:py-28">
         <div className="container-luxe grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => {
+          {services.map((s, index) => {
             const Card = (
               <div className="group relative h-full rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-[color:var(--gold)]/60 hover:shadow-[0_20px_45px_-20px_rgba(219,166,38,0.5)]">
                 <span className="grid h-12 w-12 place-items-center rounded-xl bg-[color:var(--gold)]/10 text-[color:var(--gold)] ring-1 ring-[color:var(--gold)]/30">
@@ -40,7 +41,11 @@ export default function ServicesPage() {
                 </span>
               </div>
             );
-            return s.to ? <Link key={s.title} to={s.to}>{Card}</Link> : <div key={s.title}>{Card}</div>;
+            return (
+              <ScrollReveal key={s.title} delay={(index % 3) * 100}>
+                {s.to ? <Link to={s.to}>{Card}</Link> : <div>{Card}</div>}
+              </ScrollReveal>
+            );
           })}
         </div>
       </section>

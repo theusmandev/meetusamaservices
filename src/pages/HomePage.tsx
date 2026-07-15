@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import { ScrollReveal } from "../components/ScrollReveal";
 import {
   Building2,
   Landmark,
@@ -278,7 +279,7 @@ function Hero() {
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-[color:var(--gold)] px-6 py-3.5 text-sm font-semibold text-black shadow-[0_15px_40px_-12px_rgba(219,166,38,0.7)] transition hover:-translate-y-0.5 hover:bg-[color:var(--gold-hover)]"
+                className="group inline-flex items-center gap-2 rounded-full bg-[color:var(--gold)] px-6 py-3.5 text-sm font-semibold text-black shadow-[0_15px_40px_-12px_rgba(219,166,38,0.7)] transition hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
               >
                 Order Service Now!
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
@@ -316,17 +317,19 @@ function Stats() {
     <section className="border-y border-border bg-[color:var(--secondary)] py-14 md:py-20">
       <div className="container-luxe">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((i) => (
-            <div key={i.label} className="text-center">
-              <p className="font-display text-4xl font-black tracking-tight text-foreground md:text-6xl">
-                <span className="text-gradient-gold">
-                  <Counter to={i.n} suffix={i.s} />
-                </span>
-              </p>
-              <p className="mt-2 text-sm font-medium uppercase tracking-widest text-muted-foreground">
-                {i.label}
-              </p>
-            </div>
+          {items.map((i, index) => (
+            <ScrollReveal key={i.label} delay={index * 80}>
+              <div className="text-center">
+                <p className="font-display text-4xl font-black tracking-tight text-foreground md:text-6xl">
+                  <span className="text-gradient-gold">
+                    <Counter to={i.n} suffix={i.s} />
+                  </span>
+                </p>
+                <p className="mt-2 text-sm font-medium uppercase tracking-widest text-muted-foreground">
+                  {i.label}
+                </p>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
@@ -338,22 +341,26 @@ function Services() {
   return (
     <section id="services" className="bg-background py-20 md:py-28">
       <div className="container-luxe">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="inline-flex rounded-full border border-[color:var(--gold)]/40 bg-[color:var(--gold)]/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--gold)]">
-            Our Services
-          </p>
-          <h2 className="mt-4 font-display text-3xl font-black leading-tight md:text-5xl">
-            Everything you need to <span className="text-gradient-gold">operate globally</span>
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            From company incorporation to payment activation and eCommerce launch —
-            one team, one process, one point of accountability.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="inline-flex rounded-full border border-[color:var(--gold)]/40 bg-[color:var(--gold)]/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--gold)]">
+              Our Services
+            </p>
+            <h2 className="mt-4 font-display text-3xl font-black leading-tight md:text-5xl">
+              Everything you need to <span className="text-gradient-gold">operate globally</span>
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              From company incorporation to payment activation and eCommerce launch —
+              one team, one process, one point of accountability.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <ServiceCard key={s.title} {...s} />
+          {services.map((s, index) => (
+            <ScrollReveal key={s.title} delay={(index % 3) * 100}>
+              <ServiceCard {...s} />
+            </ScrollReveal>
           ))}
         </div>
       </div>
@@ -388,28 +395,32 @@ function WhyUs() {
     <section className="bg-[color:var(--secondary)] py-20 md:py-28">
       <div className="container-luxe">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-start">
-          <div>
-            <p className="inline-flex rounded-full border border-[color:var(--gold)]/40 bg-[color:var(--gold)]/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--gold)]">
-              Why Choose Us
-            </p>
-            <h2 className="mt-4 font-display text-3xl font-black leading-tight md:text-5xl">
-              A consultancy built for <span className="text-gradient-gold">serious operators.</span>
-            </h2>
-            <p className="mt-4 text-muted-foreground">
-              We're not a template mill. Every setup is reviewed by a senior
-              specialist so you launch with structure, compliance, and clarity.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div>
+              <p className="inline-flex rounded-full border border-[color:var(--gold)]/40 bg-[color:var(--gold)]/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--gold)]">
+                Why Choose Us
+              </p>
+              <h2 className="mt-4 font-display text-3xl font-black leading-tight md:text-5xl">
+                A consultancy built for <span className="text-gradient-gold">serious operators.</span>
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                We're not a template mill. Every setup is reviewed by a senior
+                specialist so you launch with structure, compliance, and clarity.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid gap-5 sm:grid-cols-2">
-            {why.map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="rounded-2xl border border-border bg-card p-6 transition hover:border-[color:var(--gold)]/60 hover:shadow-[var(--shadow-luxe)]">
-                <span className="grid h-11 w-11 place-items-center rounded-xl bg-black text-[color:var(--gold)]">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <h3 className="mt-4 font-display font-bold text-foreground">{title}</h3>
-                <p className="mt-1.5 text-sm text-muted-foreground">{desc}</p>
-              </div>
+            {why.map(({ icon: Icon, title, desc }, index) => (
+              <ScrollReveal key={title} delay={(index % 2) * 100}>
+                <div className="rounded-2xl border border-border bg-card p-6 transition hover:border-[color:var(--gold)]/60 hover:shadow-[var(--shadow-luxe)]">
+                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-black text-[color:var(--gold)]">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <h3 className="mt-4 font-display font-bold text-foreground">{title}</h3>
+                  <p className="mt-1.5 text-sm text-muted-foreground">{desc}</p>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -422,34 +433,38 @@ function Process() {
   return (
     <section className="bg-black py-20 text-white md:py-28">
       <div className="container-luxe">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="inline-flex rounded-full border border-[color:var(--gold)]/40 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--gold)]">
-            Process Timeline
-          </p>
-          <h2 className="mt-4 font-display text-3xl font-black leading-tight md:text-5xl">
-            Four steps to a <span className="text-gradient-gold">launch-ready business.</span>
-          </h2>
-        </div>
+        <ScrollReveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="inline-flex rounded-full border border-[color:var(--gold)]/40 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--gold)]">
+              Process Timeline
+            </p>
+            <h2 className="mt-4 font-display text-3xl font-black leading-tight md:text-5xl">
+              Four steps to a <span className="text-gradient-gold">launch-ready business.</span>
+            </h2>
+          </div>
+        </ScrollReveal>
 
         <div className="relative mt-16">
           <div className="pointer-events-none absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-[color:var(--gold)]/40 to-transparent lg:block" />
           <div className="grid gap-8 lg:grid-cols-4">
             {process.map((p, i) => (
-              <div key={p.title} className="relative">
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm transition hover:-translate-y-1 hover:border-[color:var(--gold)]/50">
-                  <div className="flex items-center gap-3">
-                    <span className="grid h-10 w-10 place-items-center rounded-full bg-[color:var(--gold)] font-bold text-black">
-                      {i + 1}
+              <ScrollReveal key={p.title} delay={i * 80}>
+                <div className="relative">
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm transition hover:-translate-y-1 hover:border-[color:var(--gold)]/50">
+                    <div className="flex items-center gap-3">
+                      <span className="grid h-10 w-10 place-items-center rounded-full bg-[color:var(--gold)] font-bold text-black">
+                        {i + 1}
+                      </span>
+                      <p className="text-xs font-semibold uppercase tracking-widest text-white/50">Step {i + 1}</p>
+                    </div>
+                    <span className="mt-5 inline-grid h-12 w-12 place-items-center rounded-xl bg-white/5 text-[color:var(--gold)]">
+                      <p.icon className="h-6 w-6" />
                     </span>
-                    <p className="text-xs font-semibold uppercase tracking-widest text-white/50">Step {i + 1}</p>
+                    <h3 className="mt-4 font-display text-lg font-bold">{p.title}</h3>
+                    <p className="mt-1.5 text-sm text-white/70">{p.desc}</p>
                   </div>
-                  <span className="mt-5 inline-grid h-12 w-12 place-items-center rounded-xl bg-white/5 text-[color:var(--gold)]">
-                    <p.icon className="h-6 w-6" />
-                  </span>
-                  <h3 className="mt-4 font-display text-lg font-bold">{p.title}</h3>
-                  <p className="mt-1.5 text-sm text-white/70">{p.desc}</p>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -462,26 +477,27 @@ function Industries() {
   return (
     <section className="bg-background py-20 md:py-28">
       <div className="container-luxe">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="inline-flex rounded-full border border-[color:var(--gold)]/40 bg-[color:var(--gold)]/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--gold)]">
-            Industries We Help
-          </p>
-          <h2 className="mt-4 font-display text-3xl font-black leading-tight md:text-5xl">
-            Trusted across <span className="text-gradient-gold">every modern industry.</span>
-          </h2>
-        </div>
+        <ScrollReveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="inline-flex rounded-full border border-[color:var(--gold)]/40 bg-[color:var(--gold)]/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--gold)]">
+              Industries We Help
+            </p>
+            <h2 className="mt-4 font-display text-3xl font-black leading-tight md:text-5xl">
+              Trusted across <span className="text-gradient-gold">every modern industry.</span>
+            </h2>
+          </div>
+        </ScrollReveal>
 
         <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
-          {industries.map(({ icon: Icon, label }) => (
-            <div
-              key={label}
-              className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 text-center transition hover:-translate-y-1 hover:border-[color:var(--gold)]/60 hover:shadow-[var(--shadow-luxe)]"
-            >
-              <span className="grid h-12 w-12 place-items-center rounded-xl bg-[color:var(--gold)]/10 text-[color:var(--gold)] transition group-hover:bg-[color:var(--gold)] group-hover:text-black">
-                <Icon className="h-6 w-6" />
-              </span>
-              <p className="text-sm font-semibold text-foreground">{label}</p>
-            </div>
+          {industries.map(({ icon: Icon, label }, index) => (
+            <ScrollReveal key={label} delay={(index % 5) * 60}>
+              <div className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 text-center transition hover:-translate-y-1 hover:border-[color:var(--gold)]/60 hover:shadow-[var(--shadow-luxe)]">
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-[color:var(--gold)]/10 text-[color:var(--gold)] transition group-hover:bg-[color:var(--gold)] group-hover:text-black">
+                  <Icon className="h-6 w-6" />
+                </span>
+                <p className="text-sm font-semibold text-foreground">{label}</p>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
@@ -493,40 +509,41 @@ function Testimonials() {
   return (
     <section className="bg-[color:var(--secondary)] py-20 md:py-28">
       <div className="container-luxe">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="inline-flex rounded-full border border-[color:var(--gold)]/40 bg-[color:var(--gold)]/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--gold)]">
-            Testimonials
-          </p>
-          <h2 className="mt-4 font-display text-3xl font-black leading-tight md:text-5xl">
-            Trusted by founders <span className="text-gradient-gold">across the world.</span>
-          </h2>
-        </div>
+        <ScrollReveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="inline-flex rounded-full border border-[color:var(--gold)]/40 bg-[color:var(--gold)]/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--gold)]">
+              Testimonials
+            </p>
+            <h2 className="mt-4 font-display text-3xl font-black leading-tight md:text-5xl">
+              Trusted by founders <span className="text-gradient-gold">across the world.</span>
+            </h2>
+          </div>
+        </ScrollReveal>
 
         <div className="mt-14 grid gap-5 md:grid-cols-2">
-          {testimonials.map((t) => (
-            <figure
-              key={t.name}
-              className="relative rounded-2xl border border-border bg-card p-7 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition hover:-translate-y-1 hover:border-[color:var(--gold)]/60 hover:shadow-[0_20px_45px_-20px_rgba(0,0,0,0.15)]"
-            >
-              <Quote className="absolute right-6 top-6 h-8 w-8 text-[color:var(--gold)]/20" />
-              <div className="flex items-center gap-1 text-[color:var(--gold)]">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
-              </div>
-              <blockquote className="mt-4 text-base leading-relaxed text-foreground">
-                "{t.quote}"
-              </blockquote>
-              <figcaption className="mt-6 flex items-center gap-3">
-                <span className="grid h-11 w-11 place-items-center rounded-full bg-black font-display text-sm font-bold text-[color:var(--gold)]">
-                  {t.initials}
-                </span>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
+          {testimonials.map((t, index) => (
+            <ScrollReveal key={t.name} delay={(index % 2) * 100}>
+              <figure className="relative rounded-2xl border border-border bg-card p-7 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition hover:-translate-y-1 hover:border-[color:var(--gold)]/60 hover:shadow-[0_20px_45px_-20px_rgba(0,0,0,0.15)]">
+                <Quote className="absolute right-6 top-6 h-8 w-8 text-[color:var(--gold)]/20" />
+                <div className="flex items-center gap-1 text-[color:var(--gold)]">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" />
+                  ))}
                 </div>
-              </figcaption>
-            </figure>
+                <blockquote className="mt-4 text-base leading-relaxed text-foreground">
+                  "{t.quote}"
+                </blockquote>
+                <figcaption className="mt-6 flex items-center gap-3">
+                  <span className="grid h-11 w-11 place-items-center rounded-full bg-black font-display text-sm font-bold text-[color:var(--gold)]">
+                    {t.initials}
+                  </span>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">{t.name}</p>
+                    <p className="text-xs text-muted-foreground">{t.role}</p>
+                  </div>
+                </figcaption>
+              </figure>
+            </ScrollReveal>
           ))}
         </div>
       </div>
@@ -539,7 +556,8 @@ function FAQ() {
   return (
     <section className="bg-background py-20 md:py-28">
       <div className="container-luxe grid gap-12 lg:grid-cols-[1fr_1.4fr]">
-        <div>
+        <ScrollReveal>
+          <div>
           <p className="inline-flex rounded-full border border-[color:var(--gold)]/40 bg-[color:var(--gold)]/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--gold)]">
             FAQ
           </p>
@@ -551,42 +569,45 @@ function FAQ() {
           </p>
           <Link
             to="/contact"
-            className="mt-6 inline-flex items-center gap-2 rounded-full border border-[color:var(--gold)] px-5 py-2.5 text-sm font-semibold text-[color:var(--gold)] transition hover:bg-[color:var(--gold)] hover:text-black"
+            className="mt-6 inline-flex items-center gap-2 rounded-full border border-[color:var(--gold)] px-5 py-2.5 text-sm font-semibold text-[color:var(--gold)] transition hover:scale-[1.03] hover:bg-[color:var(--gold)] hover:text-black hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
           >
             Ask a question <ArrowRight className="h-4 w-4" />
           </Link>
-        </div>
+          </div>
+        </ScrollReveal>
 
-        <div className="space-y-3">
-          {faqs.map((f, i) => {
-            const isOpen = open === i;
-            return (
-              <div
-                key={f.q}
-                className={`rounded-2xl border bg-card transition ${isOpen ? "border-[color:var(--gold)]/60 shadow-[var(--shadow-luxe)]" : "border-border"}`}
-              >
-                <button
-                  onClick={() => setOpen(isOpen ? null : i)}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
-                  aria-expanded={isOpen}
-                >
-                  <span className="font-display text-base font-bold text-foreground md:text-lg">{f.q}</span>
-                  <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-full transition ${isOpen ? "bg-[color:var(--gold)] text-black" : "bg-secondary text-foreground"}`}>
-                    {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
-                  </span>
-                </button>
+        <ScrollReveal delay={100}>
+          <div className="space-y-3">
+            {faqs.map((f, i) => {
+              const isOpen = open === i;
+              return (
                 <div
-                  className="grid overflow-hidden px-5 transition-[grid-template-rows,padding] duration-300"
-                  style={{ gridTemplateRows: isOpen ? "1fr" : "0fr", paddingBottom: isOpen ? "1rem" : "0" }}
+                  key={f.q}
+                  className={`rounded-2xl border bg-card transition ${isOpen ? "border-[color:var(--gold)]/60 shadow-[var(--shadow-luxe)]" : "border-border"}`}
                 >
-                  <div className="min-h-0 overflow-hidden">
-                    <p className="text-sm leading-relaxed text-muted-foreground">{f.a}</p>
+                  <button
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="font-display text-base font-bold text-foreground md:text-lg">{f.q}</span>
+                    <span className={`grid h-8 w-8 shrink-0 place-items-center rounded-full transition ${isOpen ? "bg-[color:var(--gold)] text-black" : "bg-secondary text-foreground"}`}>
+                      {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                    </span>
+                  </button>
+                  <div
+                    className="grid overflow-hidden px-5 transition-[grid-template-rows,padding] duration-300"
+                    style={{ gridTemplateRows: isOpen ? "1fr" : "0fr", paddingBottom: isOpen ? "1rem" : "0" }}
+                  >
+                    <div className="min-h-0 overflow-hidden">
+                      <p className="text-sm leading-relaxed text-muted-foreground">{f.a}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
@@ -595,45 +616,47 @@ export function Contact() {
   return (
     <section id="contact" className="bg-[color:var(--secondary)] py-20 md:py-28">
       <div className="container-luxe">
-        <div className="grid overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-luxe)] lg:grid-cols-[1fr_1.2fr]">
-          {/* Left: info */}
-          <div className="relative overflow-hidden bg-black p-10 text-white md:p-12">
-            <div
-              className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full opacity-40 blur-3xl"
-              style={{ background: "radial-gradient(circle, #DBA626, transparent 70%)" }}
-            />
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--gold)]">Get in touch</p>
-            <h2 className="mt-3 font-display text-3xl font-black leading-tight md:text-4xl">
-              Let's build your <span className="text-gradient-gold">global business.</span>
-            </h2>
-            <p className="mt-4 text-white/70">
-              Share a few details and we'll get back within one business day with
-              a clear roadmap and honest pricing.
-            </p>
+        <ScrollReveal>
+          <div className="grid overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-luxe)] lg:grid-cols-[1fr_1.2fr]">
+            {/* Left: info */}
+            <div className="relative overflow-hidden bg-black p-10 text-white md:p-12">
+              <div
+                className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full opacity-40 blur-3xl"
+                style={{ background: "radial-gradient(circle, #DBA626, transparent 70%)" }}
+              />
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--gold)]">Get in touch</p>
+              <h2 className="mt-3 font-display text-3xl font-black leading-tight md:text-4xl">
+                Let's build your <span className="text-gradient-gold">global business.</span>
+              </h2>
+              <p className="mt-4 text-white/70">
+                Share a few details and we'll get back within one business day with
+                a clear roadmap and honest pricing.
+              </p>
 
-            <div className="mt-8 space-y-5">
-              {[
-                { icon: Users, label: "Email", value: "contact@meetusama.com" },
-                { icon: Clock, label: "Response Time", value: "Within 24 hours" },
-                { icon: Globe2, label: "Coverage", value: "Serving clients in 20+ countries" },
-                { icon: ShieldCheck, label: "Confidentiality", value: "Encrypted, NDA-ready by request" },
-              ].map((i) => (
-                <div key={i.label} className="flex items-start gap-3">
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/5 text-[color:var(--gold)]">
-                    <i.icon className="h-5 w-5" />
-                  </span>
-                  <div>
-                    <p className="text-[11px] uppercase tracking-widest text-white/50">{i.label}</p>
-                    <p className="text-sm font-semibold text-white">{i.value}</p>
+              <div className="mt-8 space-y-5">
+                {[
+                  { icon: Users, label: "Email", value: "contact@meetusama.com" },
+                  { icon: Clock, label: "Response Time", value: "Within 24 hours" },
+                  { icon: Globe2, label: "Coverage", value: "Serving clients in 20+ countries" },
+                  { icon: ShieldCheck, label: "Confidentiality", value: "Encrypted, NDA-ready by request" },
+                ].map((i) => (
+                  <div key={i.label} className="flex items-start gap-3">
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/5 text-[color:var(--gold)]">
+                      <i.icon className="h-5 w-5" />
+                    </span>
+                    <div>
+                      <p className="text-[11px] uppercase tracking-widest text-white/50">{i.label}</p>
+                      <p className="text-sm font-semibold text-white">{i.value}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Right: form */}
-          <ContactForm />
-        </div>
+            {/* Right: form */}
+            <ContactForm />
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

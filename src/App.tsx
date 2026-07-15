@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
-import { ScrollToTop } from "./components/ScrollToTop"; 
+import { ScrollToTop } from "./components/ScrollToTop";
+import { ScrollProgress } from "./components/ScrollProgress";
 import { SiteHeader } from "./components/site-header";
 import { SiteFooter } from "./components/site-footer";
 import { FloatingActions } from "./components/floating-actions";
@@ -34,7 +35,7 @@ function NotFoundPage() {
           </p>
           <Link
             to="/"
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-[color:var(--gold)] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[color:var(--gold-hover)]"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-[color:var(--gold)] px-6 py-3 text-sm font-semibold text-black transition hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
           >
             Back to home
           </Link>
@@ -50,7 +51,7 @@ export default function App() {
     <div className="flex min-h-screen flex-col bg-background">
       {/* Yahan ScrollToTop lagaya gaya hai jo background mein kaam karega  */}
       <ScrollToTop />
-      
+      <ScrollProgress />
       <SiteHeader />
       <main className="flex-1">
         <Routes>

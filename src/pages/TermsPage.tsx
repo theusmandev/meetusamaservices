@@ -1,4 +1,5 @@
 import { PageHero } from "../components/page-hero";
+import { ScrollReveal } from "../components/ScrollReveal";
 
 const sections = [
   { title: "Acceptance of terms", body: "By using our website or engaging our services, you agree to these terms and conditions in full." },
@@ -14,14 +15,16 @@ export default function TermsPage() {
     <>
       <PageHero eyebrow="Legal" title="Terms & Conditions" subtitle="Last updated: January 2026" />
       <section className="bg-background py-16 md:py-24">
-        <article className="container-luxe mx-auto max-w-3xl">
-          {sections.map((s) => (
-            <div key={s.title} className="mt-8 first:mt-0">
-              <h2 className="font-display text-2xl font-bold">{s.title}</h2>
-              <p className="mt-3 text-muted-foreground">{s.body}</p>
-            </div>
-          ))}
-        </article>
+        <ScrollReveal>
+          <article className="container-luxe mx-auto max-w-3xl">
+            {sections.map((s) => (
+              <div key={s.title} className="mt-8 first:mt-0">
+                <h2 className="font-display text-2xl font-bold">{s.title}</h2>
+                <p className="mt-3 text-muted-foreground">{s.body}</p>
+              </div>
+            ))}
+          </article>
+        </ScrollReveal>
       </section>
     </>
   );
