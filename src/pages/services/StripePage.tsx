@@ -1,0 +1,35 @@
+import { Zap } from "lucide-react";
+import { ServicePage } from "../../components/service-page";
+
+export default function StripePage() {
+  return (
+    <ServicePage data={{
+      eyebrow: "Service · Payments",
+      title: "Stripe",
+      gold: "Consultancy.",
+      subtitle: "The exact documents, structuring and business-model framing needed to get Stripe approved and processing worldwide.",
+      icon: Zap,
+      timeline: "2–5 business days",
+      price: "5000 PKR",
+      includes: [
+        "Entity + Stripe alignment",
+        "Business model description",
+        "Website compliance review",
+        "Bank + payout setup",
+        "Verification response management",
+        "First-payment testing",
+      ],
+      bullets: [
+        "The lowest transaction fees for international card acquiring.",
+        "Native support for subscriptions, invoices and marketplaces.",
+        "Approved once, and structured to stay approved long-term.",
+      ],
+      requirements: [
+        "UK LTD or US LLC",
+        "Live business website with clear T&Cs and refund policy",
+        "Business bank account",
+        "UK / USA Phone Number"
+      ],
+    }} />
+  );
+}
