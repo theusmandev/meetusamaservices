@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Video, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { useNavScroll } from "../hooks/use-nav-scroll";
 
 const services = [
   { to: "/services/uk-ltd", label: "UK LTD Registration" },
@@ -26,12 +27,14 @@ const legal = [
 ] as const;
 
 export function SiteFooter() {
+  const handleNavClick = useNavScroll();
+
   return (
     <footer className="bg-black text-white">
       <div className="container-luxe py-16 md:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <Link to="/" className="flex items-center gap-2.5">
+            <Link to="/" onClick={handleNavClick("/")} className="flex items-center gap-2.5">
               <span className="grid h-10 w-10 place-items-center rounded-lg bg-[color:var(--gold)] font-display text-xl font-black text-black">
                 M
               </span>
@@ -61,7 +64,7 @@ export function SiteFooter() {
             <ul className="mt-5 space-y-3 text-sm text-white/70">
               {links.map((l) => (
                 <li key={l.to}>
-                  <Link to={l.to} className="transition hover:text-[color:var(--gold)]">{l.label}</Link>
+                  <Link to={l.to} onClick={handleNavClick(l.to)} className="transition hover:text-[color:var(--gold)]">{l.label}</Link>
                 </li>
               ))}
             </ul>
@@ -72,7 +75,7 @@ export function SiteFooter() {
             <ul className="mt-5 space-y-3 text-sm text-white/70">
               {services.slice(0, 6).map((l) => (
                 <li key={l.to}>
-                  <Link to={l.to} className="transition hover:text-[color:var(--gold)]">{l.label}</Link>
+                  <Link to={l.to} onClick={handleNavClick(l.to)} className="transition hover:text-[color:var(--gold)]">{l.label}</Link>
                 </li>
               ))}
             </ul>
@@ -83,10 +86,10 @@ export function SiteFooter() {
             <ul className="mt-5 space-y-3 text-sm text-white/70">
               {legal.map((l) => (
                 <li key={l.to}>
-                  <Link to={l.to} className="transition hover:text-[color:var(--gold)]">{l.label}</Link>
+                  <Link to={l.to} onClick={handleNavClick(l.to)} className="transition hover:text-[color:var(--gold)]">{l.label}</Link>
                 </li>
               ))}
-              <li><Link to="/blog" className="transition hover:text-[color:var(--gold)]">Blog</Link></li>
+              <li><Link to="/blog" onClick={handleNavClick("/blog")} className="transition hover:text-[color:var(--gold)]">Blog</Link></li>
             </ul>
            
             
