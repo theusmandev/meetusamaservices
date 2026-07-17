@@ -23,23 +23,40 @@ export default function BlogPage() {
               >
                 {/* Card thumbnail */}
                 <div className="relative aspect-[16/10] overflow-hidden bg-black">
-                  <div
-                    className="absolute inset-0 opacity-90"
-                    style={{
-                      background:
-                        "radial-gradient(120% 80% at 20% 20%, rgba(219,166,38,0.35), transparent 60%), linear-gradient(135deg, #111 0%, #000 100%)",
-                    }}
-                  />
+                  {post.image ? (
+                    <>
+                      {/* Real photo */}
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover object-center transition duration-500 group-hover:scale-105"
+                      />
+                      {/* Dark gradient overlay — keeps badge readable */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
+                    </>
+                  ) : (
+                    /* Fallback: original gradient + initial letter */
+                    <div
+                      className="absolute inset-0 opacity-90"
+                      style={{
+                        background:
+                          "radial-gradient(120% 80% at 20% 20%, rgba(219,166,38,0.35), transparent 60%), linear-gradient(135deg, #111 0%, #000 100%)",
+                      }}
+                    />
+                  )}
                   <div className="absolute left-5 top-5">
                     <span className="rounded-full border border-[color:var(--gold)]/40 bg-black/60 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-[color:var(--gold)]">
                       {post.category}
                     </span>
                   </div>
-                  <div className="absolute bottom-5 right-5 text-white/40">
-                    <span className="font-display text-5xl font-black">
-                      {post.title.slice(0, 1)}
-                    </span>
-                  </div>
+                  {!post.image && (
+                    <div className="absolute bottom-5 right-5 text-white/40">
+                      <span className="font-display text-5xl font-black">
+                        {post.title.slice(0, 1)}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Card body */}

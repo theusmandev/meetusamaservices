@@ -5,6 +5,7 @@ export interface BlogPost {
   title: string;
   excerpt: string;
   content: string[];
+  image?: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -23,6 +24,7 @@ export const blogPosts: BlogPost[] = [
       "Our recommendation: If most of your clients are in the US or you're building a SaaS/digital product aimed at a global audience, a US LLC (Wyoming or New Mexico) is usually the simpler, more cost-effective starting point. If you're targeting UK/EU clients, or plan to eventually hire and build a real operating presence, a UK LTD offers more credibility and a clearer long-term tax framework.",
       "There's no universally 'correct' answer — it depends on your specific business model. That's exactly why we start every engagement with a free consultation before recommending a structure.",
     ],
+    image: `${import.meta.env.BASE_URL}blog-images/uk-ltd-vs-us-llc.jpg`,
   },
   {
     slug: "stripe-approval-non-us-founders",
@@ -40,6 +42,7 @@ export const blogPosts: BlogPost[] = [
       "If you get rejected once, don't just reapply blindly: A second rejection with the same underlying issue can make future approval significantly harder. We typically review the specific rejection reason, fix the root cause (entity structure, documentation, website, or business description), and only then proceed — this single step avoids most of the repeat-rejection cases we see.",
       "We've walked non-US founders through this process across dozens of business models — from agencies to SaaS to marketplaces — and the difference between a smooth approval and a frustrating back-and-forth almost always comes down to preparation before the application, not luck after it.",
     ],
+    image: `${import.meta.env.BASE_URL}blog-images/stripe-approval.jpg`,
   },
   {
     slug: "wise-business-account-anywhere",
@@ -56,6 +59,7 @@ export const blogPosts: BlogPost[] = [
       "Once approved, set it up properly: After approval, take the time to add all the currency balances you'll actually need, set up your account details for each currency (so clients can pay you like a local business in their own country), and connect Wise to your invoicing tools if you use them — this is where most of the day-to-day time savings come from.",
       "We handle this setup end-to-end for our clients — from entity formation through to a fully verified, ready-to-use Wise Business account — because the paperwork is where most delays happen, not the platform itself.",
     ],
+    image: `${import.meta.env.BASE_URL}blog-images/wise-business.jpg`,
   },
   {
     slug: "amazon-fba-setup-international-sellers",

@@ -29,7 +29,22 @@ export default function BlogPostPage() {
     <>
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-black text-white">
-        {/* Radial gold glow */}
+        {/* Background image (when available) */}
+        {post.image && (
+          <>
+            <img
+              src={post.image}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover object-center"
+            />
+            {/* Multi-layer dark overlay: keeps all text readable over any photo */}
+            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+          </>
+        )}
+
+        {/* Radial gold glow (always rendered on top) */}
         <div
           className="pointer-events-none absolute inset-0 opacity-30"
           style={{
