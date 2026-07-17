@@ -18,13 +18,40 @@
     />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/meetusamaservices/favicon.ico" type="image/x-image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
     />
+    <!-- GitHub Pages SPA path restore — companion to public/404.html -->
+    <!-- https://github.com/rafgraph/spa-github-pages -->
+    <script>
+      (function () {
+        var l = window.location;
+        if (l.search[1] === "p") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            });
+          // decoded[0] is "p=<path>", decoded[1] (optional) is "q=<query>"
+          var path = decoded[0].slice(2); // strip leading "p="
+          var query = decoded[1] ? "?" + decoded[1].slice(2) : ""; // strip leading "q="
+          var hash = l.hash;
+          history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + // base path (already ends without trailing slash after redirect)
+              (path ? "/" + path : "/") +
+              query +
+              hash,
+          );
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

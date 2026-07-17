@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Meet Usama Services</title>
+    <script>
+      // GitHub Pages SPA redirect — spa-github-pages technique
+      // https://github.com/rafgraph/spa-github-pages
+      //
+      // When GitHub Pages serves this 404.html for an unknown path, this script
+      // encodes the intended URL as a query param and redirects to index.html.
+      // The companion script in index.html then reads it back and restores the
+      // correct path via history.replaceState before React Router boots.
+      //
+      // `pathSegmentsToKeep` must equal the number of path segments in the
+      // repo's base path. For https://theusmandev.github.io/meetusamaservices/
+      // that is 1 (the "meetusamaservices" segment).
+      var pathSegmentsToKeep = 1;
+
+      var l = window.location;
+      l.replace(
+        l.protocol +
+          "//" +
+          l.hostname +
+          (l.port ? ":" + l.port : "") +
+          l.pathname
+            .split("/")
+            .slice(0, 1 + pathSegmentsToKeep)
+            .join("/") +
+          "/?p=" +
+          l.pathname
+            .slice(1)
+            .split("/")
+            .slice(pathSegmentsToKeep)
+            .join("/")
+            .replace(/&/g, "~and~") +
+          (l.search ? "&q=" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+          l.hash,
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
