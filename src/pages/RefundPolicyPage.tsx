@@ -1,5 +1,4 @@
 import { PageHero } from "../components/page-hero";
-import { ScrollReveal } from "../components/ScrollReveal";
 import { 
   CheckCircle2, 
   XCircle, 
@@ -21,8 +20,7 @@ export default function RefundPolicyPage() {
         subtitle="Last Updated: July 17, 2026"
       />
       <section className="bg-background py-16 md:py-24">
-        <ScrollReveal>
-          <article className="container-luxe mx-auto max-w-3xl space-y-6">
+        <article className="container-luxe mx-auto max-w-3xl space-y-6">
 
             {/* ── Section 1 ── */}
             <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
@@ -244,7 +242,6 @@ export default function RefundPolicyPage() {
               Questions about this policy? Contact us at contact@meetusama.com.
             </p>
           </article>
-        </ScrollReveal>
       </section>
     </>
   );
