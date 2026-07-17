@@ -15,6 +15,7 @@ import FAQPage from "./pages/FAQPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import TermsPage from "./pages/TermsPage";
 import PaymentPage from "./pages/PaymentPage";
+import RefundPolicyPage from "./pages/RefundPolicyPage";
 
 import UKLtdPage from "./pages/services/UKLtdPage";
 import USLlcPage from "./pages/services/USLlcPage";
@@ -69,6 +70,7 @@ export default function App() {
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
+          <Route path="/refund-policy" element={<RefundPolicyPage />} />
           <Route path="/payment" element={<PaymentPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

@@ -387,7 +387,20 @@ export default function PaymentPage() {
         eyebrow="Payment"
         title={<>Complete Your <span className="text-gradient-gold">Payment.</span></>}
         subtitle="Apni details fill karein, payment karein, aur screenshot upload kar ke submit kar dein."
-      />
+      >
+        <p className="text-sm text-white/60">
+          Please read our{" "}
+          <Link
+            to="/refund-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[color:var(--gold)] underline underline-offset-2 hover:text-[color:var(--gold)]/80"
+          >
+            Refund Policy
+          </Link>{" "}
+          before proceeding with payment.
+        </p>
+      </PageHero>
 
       <section className="bg-background py-16 md:py-20">
         <div className="container-luxe max-w-2xl">

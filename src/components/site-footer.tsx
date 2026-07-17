@@ -24,6 +24,7 @@ const links = [
 const legal = [
   { to: "/privacy", label: "Privacy Policy" },
   { to: "/terms", label: "Terms & Conditions" },
+  { to: "/refund-policy", label: "Refund Policy" },
 ] as const;
 
 export function SiteFooter() {
