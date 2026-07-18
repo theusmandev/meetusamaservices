@@ -1,9 +1,12 @@
+import { SEO } from "../../components/SEO";
 import { Building2 } from "lucide-react";
 import { ServicePage } from "../../components/service-page";
 
 export default function UKLtdPage() {
   return (
-    <ServicePage data={{
+    <>
+      <SEO title="UK LTD Registration for Non-Residents | Meet Usama Services" description="Full UK Limited company formation, HMRC compliance, and registered address — done for you by experienced consultants." />
+      <ServicePage data={{
       eyebrow: "Service · UK",
       title: "UK LTD",
       gold: "Registration.",
@@ -30,5 +33,6 @@ export default function UKLtdPage() {
         "Preferred company name and business activity",
       ],
     }} />
+    </>
   );
 }

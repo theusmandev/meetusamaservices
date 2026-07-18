@@ -1,9 +1,12 @@
+import { SEO } from "../../components/SEO";
 import { Wallet } from "lucide-react";
 import { ServicePage } from "../../components/service-page";
 
 export default function WisePage() {
   return (
-    <ServicePage data={{
+    <>
+      <SEO title="Wise Business Account Setup | Meet Usama Services" description="Multi-currency Wise Business accounts with clean, reliable approval — set up end-to-end by our consultancy team." />
+      <ServicePage data={{
       eyebrow: "Service · Payments",
       title: "Wise Business",
       gold: "Consultancy.",
@@ -31,5 +34,6 @@ export default function WisePage() {
         "UK / USA Phone Number",
       ],
     }} />
+    </>
   );
 }

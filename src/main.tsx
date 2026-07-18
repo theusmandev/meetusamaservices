@@ -4,13 +4,17 @@ import { BrowserRouter } from "react-router-dom";
 import "./styles.css";
 import App from "./App";
 
+import { HelmetProvider } from "react-helmet-async";
+
 const root = document.getElementById("root");
 if (!root) throw new Error("No #root element found");
 
 createRoot(root).render(
   <StrictMode>
-    <BrowserRouter basename="/meetusamaservices">
-      <App />
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter basename="/meetusamaservices">
+        <App />
+      </BrowserRouter>
+    </HelmetProvider>
   </StrictMode>,
 );

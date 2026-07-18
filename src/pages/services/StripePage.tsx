@@ -1,9 +1,12 @@
+import { SEO } from "../../components/SEO";
 import { Zap } from "lucide-react";
 import { ServicePage } from "../../components/service-page";
 
 export default function StripePage() {
   return (
-    <ServicePage data={{
+    <>
+      <SEO title="Stripe Approval for Non-US Founders | Meet Usama Services" description="Stripe activation for SaaS founders, agencies, and global operators — we handle the structuring and documentation." />
+      <ServicePage data={{
       eyebrow: "Service · Payments",
       title: "Stripe",
       gold: "Consultancy.",
@@ -31,5 +34,6 @@ export default function StripePage() {
         "UK / USA Phone Number"
       ],
     }} />
+    </>
   );
 }

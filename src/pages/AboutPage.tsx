@@ -1,3 +1,4 @@
+import { SEO } from "../components/SEO";
 import { Link } from "react-router-dom";
 import { Award, Users, Globe2, Target, Sparkles, ShieldCheck } from "lucide-react";
 import { PageHero, CTABand } from "../components/page-hero";
@@ -13,6 +14,8 @@ const values = [
 export default function AboutPage() {
   return (
     <>
+      <SEO title="About Us | Meet Usama Services" description="Learn about Meet Usama Services — a global business consultancy helping entrepreneurs register companies and open international payment accounts." />
+      <>
       <PageHero
         eyebrow="About Us"
         title={<>Built for founders who take <span className="text-gradient-gold">business seriously.</span></>}
@@ -94,6 +97,7 @@ export default function AboutPage() {
       </section>
 
       <CTABand />
+    </>
     </>
   );
 }

@@ -1,3 +1,4 @@
+import { SEO } from "../components/SEO";
 
 import { useState } from "react";
 import { PageHero } from "../components/page-hero";
@@ -67,6 +68,8 @@ export default function ContactPage() {
 
   return (
     <>
+      <SEO title="Contact Us | Meet Usama Services" description="Get in touch with Meet Usama Services for a free consultation on company registration and international payment accounts." />
+      <>
       <PageHero
         eyebrow="Contact"
         title={<>Let's build your <span className="text-gradient-gold">global business.</span></>}
@@ -148,6 +151,7 @@ export default function ContactPage() {
           </ScrollReveal>
         </div>
       </section>
+    </>
     </>
   );
 }

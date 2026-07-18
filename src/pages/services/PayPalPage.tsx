@@ -1,9 +1,12 @@
+import { SEO } from "../../components/SEO";
 import { DollarSign } from "lucide-react";
 import { ServicePage } from "../../components/service-page";
 
 export default function PayPalPage() {
   return (
-    <ServicePage data={{
+    <>
+      <SEO title="PayPal Business Account Setup | Meet Usama Services" description="Verified PayPal Business accounts that hold and withdraw reliably — set up by our experienced team." />
+      <ServicePage data={{
       eyebrow: "Service · Payments",
       title: "PayPal Business",
       gold: "Setup.",
@@ -30,5 +33,6 @@ export default function PayPalPage() {
         "UK / USA Phone Number",
       ],
     }} />
+    </>
   );
 }

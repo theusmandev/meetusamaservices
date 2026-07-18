@@ -1,3 +1,4 @@
+import { SEO } from "../components/SEO";
 import { useState, useMemo, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { Copy, Check, Upload, Loader2, CheckCircle2, ArrowLeft, Info, X, Clock } from "lucide-react";
@@ -372,6 +373,8 @@ export default function PaymentPage() {
 
   return (
     <>
+      <SEO title="Complete Your Payment | Meet Usama Services" description="Secure payment page for Meet Usama Services clients." noindex={true} />
+      <>
       {/* Refund policy modal */}
       {showModal && (
         <RefundPolicyModal
@@ -567,6 +570,7 @@ export default function PaymentPage() {
           </form>
         </div>
       </section>
+    </>
     </>
   );
 }

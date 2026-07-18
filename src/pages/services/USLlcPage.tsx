@@ -1,9 +1,12 @@
+import { SEO } from "../../components/SEO";
 import { Landmark } from "lucide-react";
 import { ServicePage } from "../../components/service-page";
 
 export default function USLlcPage() {
   return (
-    <ServicePage data={{
+    <>
+      <SEO title="US LLC Formation (Wyoming, Delaware, New Mexico) | Meet Usama Services" description="US LLC formation for non-residents with a matching EIN — fast, compliant, and built for global founders." />
+      <ServicePage data={{
       eyebrow: "Service · US",
       title: "US LLC",
       gold: "Registration.",
@@ -30,5 +33,6 @@ export default function USLlcPage() {
         "Preferred company name and business activity",
       ],
     }} />
+    </>
   );
 }

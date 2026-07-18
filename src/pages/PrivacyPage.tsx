@@ -1,3 +1,4 @@
+import { SEO } from "../components/SEO";
 import { PageHero } from "../components/page-hero";
 import { ScrollReveal } from "../components/ScrollReveal";
 
@@ -13,6 +14,8 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <>
+      <SEO title="Privacy Policy | Meet Usama Services" description="How Meet Usama Services collects, uses, and protects your personal information." />
+      <>
       <PageHero eyebrow="Legal" title="Privacy Policy" subtitle="Last updated: January 2026" />
       <section className="bg-background py-16 md:py-24">
         <ScrollReveal>
@@ -36,6 +39,7 @@ export default function PrivacyPage() {
           </article>
         </ScrollReveal>
       </section>
+    </>
     </>
   );
 }

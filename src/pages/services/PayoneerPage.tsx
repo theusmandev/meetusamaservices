@@ -1,9 +1,12 @@
+import { SEO } from "../../components/SEO";
 import { CreditCard } from "lucide-react";
 import { ServicePage } from "../../components/service-page";
 
 export default function PayoneerPage() {
   return (
-    <ServicePage data={{
+    <>
+      <SEO title="Payoneer Consultancy | Meet Usama Services" description="Payoneer account setup for freelancers and marketplace sellers, handled from application to approval." />
+      <ServicePage data={{
       eyebrow: "Service · Payments",
       title: "Payoneer",
       gold: "Consultancy.",
@@ -32,5 +35,6 @@ export default function PayoneerPage() {
         "UK / USA Phone Number",
       ],
     }} />
+    </>
   );
 }

@@ -3,6 +3,7 @@ import { Calendar, ArrowLeft, ArrowRight } from "lucide-react";
 import { blogPosts } from "../data/blogPosts";
 import { CTABand } from "../components/page-hero";
 import { ScrollReveal } from "../components/ScrollReveal";
+import { SEO } from "../components/SEO";
 
 /** Splits a paragraph into a [leadIn, rest] tuple if it starts with a bold
  *  lead-in phrase (text before the first colon that is ≤ 60 chars and has
@@ -27,6 +28,7 @@ export default function BlogPostPage() {
 
   return (
     <>
+      <SEO title={post.title} description={post.excerpt} image={post.image} />
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-black text-white">
         {/* Background image (when available) */}

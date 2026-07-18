@@ -1,3 +1,4 @@
+import { SEO } from "../components/SEO";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { ScrollReveal } from "../components/ScrollReveal";
@@ -789,6 +790,8 @@ function Field({
 export default function HomePage() {
   return (
     <>
+      <SEO title="Meet Usama Services — Global Business & Payment Consultancy" description="Register UK LTD & US LLC companies, open Wise, Payoneer, PayPal & Stripe accounts, and launch Shopify stores worldwide — done for you by experienced consultants." />
+      <>
       <Hero />
       <Stats />
       <Services />
@@ -799,6 +802,7 @@ export default function HomePage() {
       <FAQ />
       <Contact />
       <CTABand />
+    </>
     </>
   );
 }

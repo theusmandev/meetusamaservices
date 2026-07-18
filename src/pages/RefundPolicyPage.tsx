@@ -1,3 +1,4 @@
+import { SEO } from "../components/SEO";
 import { PageHero } from "../components/page-hero";
 import { 
   CheckCircle2, 
@@ -14,6 +15,8 @@ import {
 export default function RefundPolicyPage() {
   return (
     <>
+      <SEO title="Refund Policy | Meet Usama Services" description="Read our refund policy before making a payment for any Meet Usama Services consultancy service." />
+      <>
       <PageHero
         eyebrow="Legal"
         title="Refund Policy"
@@ -243,6 +246,7 @@ export default function RefundPolicyPage() {
             </p>
           </article>
       </section>
+    </>
     </>
   );
 }

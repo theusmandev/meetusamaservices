@@ -1,3 +1,4 @@
+import { SEO } from "../components/SEO";
 import { Link } from "react-router-dom";
 import {
   Building2, Landmark, Wallet, CreditCard, DollarSign, Zap, ShoppingBag, Store, FileCheck2, ArrowRight,
@@ -20,6 +21,8 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
+      <SEO title="Our Services | Company Registration & Payment Accounts — Meet Usama Services" description="From UK LTD and US LLC formation to Wise, Stripe, PayPal, and Shopify setup — explore our full range of global business consultancy services." />
+      <>
       <PageHero
         eyebrow="Services"
         title={<>One team for every step of your <span className="text-gradient-gold">global setup.</span></>}
@@ -51,6 +54,7 @@ export default function ServicesPage() {
       </section>
 
       <CTABand />
+    </>
     </>
   );
 }

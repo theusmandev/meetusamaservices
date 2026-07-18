@@ -1,9 +1,12 @@
+import { SEO } from "../../components/SEO";
 import { ShoppingBag } from "lucide-react";
 import { ServicePage } from "../../components/service-page";
 
 export default function ShopifyPage() {
   return (
-    <ServicePage data={{
+    <>
+      <SEO title="Shopify Store Setup | Meet Usama Services" description="End-to-end Shopify launch — theme, products, payments, and shipping — built and configured for you." />
+      <ServicePage data={{
       eyebrow: "Service · eCommerce",
       title: "Shopify Store",
       gold: "Setup.",
@@ -30,5 +33,6 @@ export default function ShopifyPage() {
         "Business entity for payment gateways",
       ],
     }} />
+    </>
   );
 }

@@ -1,3 +1,4 @@
+import { SEO } from "../components/SEO";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import { PageHero, CTABand } from "../components/page-hero";
@@ -18,6 +19,8 @@ export default function FAQPage() {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <>
+      <SEO title="Frequently Asked Questions | Meet Usama Services" description="Answers to common questions about company registration, payment account setup, pricing, and our process." />
+      <>
       <PageHero
         eyebrow="FAQ"
         title={<>Answers to the <span className="text-gradient-gold">questions that matter.</span></>}
@@ -55,6 +58,7 @@ export default function FAQPage() {
         </ScrollReveal>
       </section>
       <CTABand />
+    </>
     </>
   );
 }

@@ -1,3 +1,4 @@
+import { SEO } from "../components/SEO";
 import { Link } from "react-router-dom";
 import { ArrowRight, Calendar } from "lucide-react";
 import { PageHero, CTABand } from "../components/page-hero";
@@ -7,6 +8,8 @@ import { blogPosts } from "../data/blogPosts";
 export default function BlogPage() {
   return (
     <>
+      <SEO title="Blog | Meet Usama Services" description="Practical guides and insights on company formation, Stripe, PayPal, and Wise approval for global founders." />
+      <>
       <PageHero
         eyebrow="Blog"
         title={<>Playbooks for <span className="text-gradient-gold">modern founders.</span></>}
@@ -80,6 +83,7 @@ export default function BlogPage() {
       </section>
 
       <CTABand />
+    </>
     </>
   );
 }
