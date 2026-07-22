@@ -362,9 +362,18 @@ export default function PaymentPage() {
           <div className="container-luxe max-w-lg text-center">
             <div className="rounded-2xl border border-border bg-card p-8">
               <CheckCircle2 className="mx-auto h-14 w-14 text-[color:var(--gold)]" />
-              <p className="mt-4 text-sm text-muted-foreground">
-                Our team will contact you on your provided WhatsApp number during office hours (10 AM – 6 PM) once your payment is confirmed.
-              </p>
+              <div className="mt-6 flex flex-col items-center gap-4">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Our team will contact you on your provided WhatsApp number In Office Hours once your payment is confirmed.
+                </p>
+                <span className="inline-flex items-center gap-2 rounded-full border border-[color:var(--gold)]/40 bg-[color:var(--gold)]/10 px-4 py-1.5 text-xs font-bold text-[color:var(--gold)]">
+                  <Clock className="h-3.5 w-3.5" />
+                  <span className="flex flex-col items-start leading-tight">
+                    <span className="text-[10px] font-semibold uppercase tracking-widest opacity-70">Office Timing</span>
+                    10 AM – 6 PM
+                  </span>
+                </span>
+              </div>
               <Link
                 to="/"
                 className="mt-6 inline-flex items-center justify-center rounded-full bg-[color:var(--gold)] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[color:var(--gold-hover)] hover:scale-[1.03] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
