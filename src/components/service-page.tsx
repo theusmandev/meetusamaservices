@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Check, ArrowRight, Clock, ShieldCheck, Sparkles } from "lucide-react";
 import { PageHero, CTABand } from "./page-hero";
-import type { LucideIcon } from "lucide-react";
+import type { LucideIcon, ReactNode } from "lucide-react";
 import { ScrollReveal } from "./ScrollReveal";
 
 export interface ServiceDetail {
@@ -15,6 +15,7 @@ export interface ServiceDetail {
   bullets: string[];
   includes: string[];
   requirements: string[];
+  notice?: ReactNode;
 }
 
 export function ServicePage({ data }: { data: ServiceDetail }) {
@@ -69,6 +70,10 @@ export function ServicePage({ data }: { data: ServiceDetail }) {
                   </li>
                 ))}
               </ul>
+
+              {data.notice && (
+                <div className="mt-10">{data.notice}</div>
+              )}
 
               <h3 className="mt-12 font-display text-xl font-bold">What we need from you</h3>
               <ul className="mt-4 grid gap-2">

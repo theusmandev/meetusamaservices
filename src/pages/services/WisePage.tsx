@@ -1,5 +1,5 @@
 import { SEO } from "../../components/SEO";
-import { Wallet } from "lucide-react";
+import { Wallet, AlertCircle } from "lucide-react";
 import { ServicePage } from "../../components/service-page";
 
 export default function WisePage() {
@@ -33,6 +33,24 @@ export default function WisePage() {
         "Director's passport & Bank Statement",
         "UK / USA Phone Number",
       ],
+      notice: (
+        <div className="flex items-start gap-3 rounded-xl border border-amber-500/30 bg-amber-500/8 px-4 py-3.5">
+          <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-amber-500" />
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            <strong className="text-foreground">Important for Pakistan-based clients:</strong>{" "}
+            Wise does not provide USD account details to Pakistan-based users due to a residency
+            restriction — even if you have a UK LTD or US LLC.{" "}
+            <a
+              href="/meetusamaservices/blog/wise-usd-account-pakistan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[color:var(--gold)] underline decoration-[color:var(--gold)]/40 underline-offset-2 transition hover:decoration-[color:var(--gold)]"
+            >
+              Read why →
+            </a>
+          </p>
+        </div>
+      ),
     }} />
     </>
   );

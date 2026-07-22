@@ -1,5 +1,5 @@
 import { SEO } from "../../components/SEO";
-import { CreditCard } from "lucide-react";
+import { CreditCard, CheckCircle2 } from "lucide-react";
 import { ServicePage } from "../../components/service-page";
 
 export default function PayoneerPage() {
@@ -34,6 +34,24 @@ export default function PayoneerPage() {
         "Business Documents",
         "UK / USA Phone Number",
       ],
+      notice: (
+        <div className="flex items-start gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/8 px-4 py-3.5">
+          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            <strong className="text-foreground">Based in Pakistan and need a working USD receiving account?</strong>{" "}
+            Payoneer Business is often the more reliable option compared to Wise for Pakistan-based
+            founders.{" "}
+            <a
+              href="/meetusamaservices/blog/wise-usd-account-pakistan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[color:var(--gold)] underline decoration-[color:var(--gold)]/40 underline-offset-2 transition hover:decoration-[color:var(--gold)]"
+            >
+              Learn why →
+            </a>
+          </p>
+        </div>
+      ),
     }} />
     </>
   );
