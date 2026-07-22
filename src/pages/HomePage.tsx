@@ -223,6 +223,7 @@ const process = [
 ];
 
 const industries = [
+  
   { icon: Code2, label: "Software" },
   { icon: Briefcase, label: "Agencies" },
   { icon: Users, label: "Freelancers" },

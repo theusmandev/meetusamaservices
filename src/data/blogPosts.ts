@@ -32,6 +32,7 @@ export const blogPosts: BlogPost[] = [
       "This makes Payoneer Business a practical, reliable alternative for Pakistan-based businesses who need USD receiving details without navigating Wise's residency restrictions.",
       "Not being able to get USD account details on Wise from Pakistan isn't just about your company's registration — it's primarily tied to your country of residence as the account holder. A UK/US company is a necessary first step, but getting USD/GBP details reliably unlocked on Wise depends just as much on how your personal verification profile lines up with Wise's supported countries. If Wise isn't working out for you, Meet Usama Services can set up a Payoneer Business account for you and get you working USD bank details — a fast, reliable alternative so you're not stuck waiting on Wise's verification process.",
     ],
+    image: `${import.meta.env.BASE_URL}blog-images/wise-usd-account-pakistan.jpg`,
   },
   {
     slug: "uk-ltd-vs-us-llc",
