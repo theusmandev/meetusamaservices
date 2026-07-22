@@ -305,7 +305,7 @@ export default function PaymentPage() {
     setSubmitError("");
 
     if (!name || !whatsapp || !service || !method || !file) {
-      setSubmitError("Please fill in your details, complete the payment, upload the payment screenshot, and submit the form.");
+      setSubmitError("Please fill in your details, select payment method, complete the payment, upload the payment screenshot, and submit the form.");
       return;
     }
 
@@ -356,14 +356,14 @@ export default function PaymentPage() {
         <PageHero
           eyebrow="Payment"
           title={<>Thank you, <span className="text-gradient-gold">{name}!</span></>}
-          subtitle="Aapki payment details receive ho gayi hain. Hamari team jald aapse WhatsApp par rabta karegi."
+          subtitle="Your payment details have been successfully received."
         />
         <section className="bg-background py-16">
           <div className="container-luxe max-w-lg text-center">
             <div className="rounded-2xl border border-border bg-card p-8">
               <CheckCircle2 className="mx-auto h-14 w-14 text-[color:var(--gold)]" />
               <p className="mt-4 text-sm text-muted-foreground">
-                Confirmation ke liye humara WhatsApp check karte rahein.
+                Our team will contact you on your provided WhatsApp number during office hours (10 AM – 6 PM) once your payment is confirmed.
               </p>
               <Link
                 to="/"
@@ -396,7 +396,7 @@ export default function PaymentPage() {
       <PageHero
         eyebrow="Payment"
         title={<>Complete Your <span className="text-gradient-gold">Payment.</span></>}
-        subtitle="Apni details fill karein, payment karein, aur screenshot upload kar ke submit kar dein."
+        subtitle="Fill in the required details, complete your payment, upload the payment confirmation screenshot, and submit the form."
       >
         <p className="text-sm text-white/60">
           Please read our{" "}
@@ -539,7 +539,7 @@ export default function PaymentPage() {
                 <Upload className={`h-6 w-6 ${file ? "text-green-500" : "text-muted-foreground"}`} />
                 {file ? (
                   <div className="flex flex-col items-center gap-1">
-                    <span className="text-sm font-medium text-green-500">Screenshot uploaded successfully</span>
+                    <span className="text-sm font-medium text-green-500">File uploaded successfully</span>
                     <span className="text-xs text-muted-foreground">
                       {file.name} • {formatFileSize(file.size)}
                     </span>
