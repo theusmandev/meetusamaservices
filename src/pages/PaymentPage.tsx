@@ -49,6 +49,13 @@ const PAYMENT_METHODS = {
 
 type MethodKey = keyof typeof PAYMENT_METHODS;
 
+function formatFileSize(bytes: number): string {
+  if (bytes >= 1024 * 1024) {
+    return (bytes / (1024 * 1024)).toFixed(1) + " MB";
+  }
+  return Math.round(bytes / 1024) + " KB";
+}
+
 function CopyField({ label, value }: { label: string; value: string }) {
   const [copied, setCopied] = useState(false);
 
@@ -528,11 +535,23 @@ export default function PaymentPage() {
               <label className="mb-2 block text-sm font-semibold">
                 Upload Payment Screenshot <span className="text-red-500">*</span>
               </label>
-              <label className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-border bg-background px-4 py-8 text-center transition hover:border-[color:var(--gold)]/50">
-                <Upload className="h-6 w-6 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">
-                  {file ? file.name : "Click to upload (max 5MB, image or PDF)"}
-                </span>
+              <label className={`flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border px-4 py-8 text-center transition ${file ? "border-solid border-green-500 bg-green-500/5" : "border-dashed border-border bg-background hover:border-[color:var(--gold)]/50"}`}>
+                <Upload className={`h-6 w-6 ${file ? "text-green-500" : "text-muted-foreground"}`} />
+                {file ? (
+                  <div className="flex flex-col items-center gap-1">
+                    <span className="text-sm font-medium text-green-500">Screenshot uploaded successfully</span>
+                    <span className="text-xs text-muted-foreground">
+                      {file.name} • {formatFileSize(file.size)}
+                    </span>
+                    <span className="mt-1 text-xs font-semibold text-[color:var(--gold)] underline decoration-[color:var(--gold)]/40 underline-offset-2 transition hover:decoration-[color:var(--gold)]">
+                      Change file
+                    </span>
+                  </div>
+                ) : (
+                  <span className="text-sm text-muted-foreground">
+                    Click to upload (max 5MB, image or PDF)
+                  </span>
+                )}
                 <input
                   type="file"
                   accept="image/*,application/pdf"
