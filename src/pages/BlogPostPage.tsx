@@ -115,17 +115,17 @@ export default function BlogPostPage() {
             })}
 
             {/* Bottom back + next nudge */}
-            <div className="mt-16 flex items-center gap-4 border-t border-border pt-8">
+            <div className="mt-16 flex flex-wrap items-center gap-4 border-t border-border pt-8">
               <Link
                 to="/blog"
-                className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-semibold transition hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
+                className="inline-flex whitespace-nowrap items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-semibold transition hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
               >
                 <ArrowLeft className="h-4 w-4" />
                 All articles
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-[color:var(--gold)] px-5 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
+                className="inline-flex whitespace-nowrap items-center gap-2 rounded-full bg-[color:var(--gold)] px-5 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
               >
                 Book a consultation <ArrowRight className="h-4 w-4" />
               </Link>
