@@ -12,21 +12,21 @@ const PAYMENT_METHODS = {
     label: "Easypaisa",
     fields: [
       { label: "Account Title", value: "Meet Usama Services" },
-      { label: "Easypaisa Number", value: "0300-1234567" },
+      { label: "Easypaisa Number", value: "0300-00000000" },
     ],
   },
   jazzcash: {
     label: "JazzCash",
     fields: [
       { label: "Account Title", value: "Meet Usama Services" },
-      { label: "JazzCash Number", value: "0300-7654321" },
+      { label: "JazzCash Number", value: "0300-00000000" },
     ],
   },
   payfast: {
     label: "Payfast",
     fields: [
       { label: "Account Title", value: "Meet Usama Services" },
-      { label: "Payfast Account", value: "PF-000000000" },
+      { label: "Payfast Integration", value: "None" },
     ],
   },
   crypto: {
@@ -41,8 +41,8 @@ const PAYMENT_METHODS = {
     fields: [
       { label: "Bank Name", value: "Meezan Bank" },
       { label: "Account Title", value: "Meet Usama Services" },
-      { label: "Account Number", value: "0123456789012" },
-      { label: "IBAN", value: "PK00MEZN0000000123456789" },
+      { label: "Account Number", value: "00000000000" },
+      { label: "IBAN", value: "PK00MEZN00000000000000" },
     ],
   },
 } as const;
