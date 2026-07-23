@@ -1,8 +1,9 @@
 import { SEO } from "../components/SEO";
 import { useState, useMemo, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
-import { Copy, Check, Upload, Loader2, CheckCircle2, ArrowLeft, Info, X, Clock } from "lucide-react";
+import { Copy, Check, Upload, Loader2, CheckCircle2, ArrowLeft, Info, X, Clock, AlertTriangle } from "lucide-react";
 import { PageHero } from "../components/page-hero";
+import { SERVICE_STATUS } from "../data/serviceStatus";
 
 // 🔧 Yahan apna Google Apps Script Web App URL daalein (deploy karne ke baad milega)
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz4YgT9Fy6xdVaSWHIASzLc0AthMJkgDE-ZynTmLEg-oPj9fDisLirL_OXbPfYEbWMJ/exec";
@@ -249,6 +250,9 @@ export default function PaymentPage() {
   const prefilledService = searchParams.get("service") || "";
   const prefilledPrice   = searchParams.get("price")   || "";
 
+  // Check if the service from the URL is currently paused
+  const isServicePaused = prefilledService ? SERVICE_STATUS[prefilledService] === "paused" : false;
+
   // Format price for display: "5000" → "PKR 5,000"
   const formatPKR = (n: number) => `PKR ${n.toLocaleString("en-PK")}`;
   const displayPrice  = prefilledPrice ? formatPKR(Number(prefilledPrice)) : "";
@@ -431,6 +435,23 @@ export default function PaymentPage() {
           </Link>
 
           <form onSubmit={handleSubmit} className="space-y-6 rounded-2xl border border-border bg-card p-6 md:p-8">
+            {/* Paused service warning */}
+            {isServicePaused && (
+              <div className="flex items-start gap-3 rounded-xl border border-orange-500/30 bg-orange-500/8 px-4 py-4">
+                <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-orange-500" />
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  <strong className="text-foreground">This service is currently unavailable.</strong>{" "}
+                  Please{" "}
+                  <Link
+                    to="/contact"
+                    className="font-semibold text-[color:var(--gold)] underline decoration-[color:var(--gold)]/40 underline-offset-2 transition hover:decoration-[color:var(--gold)]"
+                  >
+                    contact us
+                  </Link>{" "}
+                  before proceeding with payment.
+                </p>
+              </div>
+            )}
             {/* Name + WhatsApp */}
             <div className="grid gap-5 sm:grid-cols-2">
               <div>

@@ -1,10 +1,11 @@
 import { SEO } from "../components/SEO";
 import { Link } from "react-router-dom";
 import {
-  Building2, Landmark, Wallet, CreditCard, DollarSign, Zap, ShoppingBag, Store, FileCheck2, ArrowRight,
+  Building2, Landmark, Wallet, CreditCard, DollarSign, Zap, ShoppingBag, Store, FileCheck2, ArrowRight, PauseCircle,
 } from "lucide-react";
 import { PageHero, CTABand } from "../components/page-hero";
 import { ScrollReveal } from "../components/ScrollReveal";
+import { SERVICE_STATUS } from "../data/serviceStatus";
 
 const services = [
   { icon: Building2, title: "UK LTD Registration", desc: "Full UK Limited company formation, HMRC compliance and address.", to: "/services/uk-ltd" },
@@ -21,7 +22,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
-      <SEO title="Our Services | Company Registration & Payment Accounts — Meet Usama Services" description="From UK LTD and US LLC formation to Wise, Stripe, PayPal, and Shopify setup — explore our full range of global business consultancy services." />
+      <SEO title="Our Services | Company Registration &amp; Payment Accounts — Meet Usama Services" description="From UK LTD and US LLC formation to Wise, Stripe, PayPal, and Shopify setup — explore our full range of global business consultancy services." />
       <>
       <PageHero
         eyebrow="Services"
@@ -32,8 +33,15 @@ export default function ServicesPage() {
       <section className="bg-background py-20 md:py-28">
         <div className="container-luxe grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, index) => {
+            const paused = SERVICE_STATUS[s.title] === "paused";
             const Card = (
-              <div className="group relative h-full rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-[color:var(--gold)]/60 hover:shadow-[0_20px_45px_-20px_rgba(219,166,38,0.5)]">
+              <div className={`group relative h-full rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-[color:var(--gold)]/60 hover:shadow-[0_20px_45px_-20px_rgba(219,166,38,0.5)] ${paused ? "opacity-75" : ""}`}>
+                {paused && (
+                  <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full border border-border bg-muted px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+                    <PauseCircle className="h-3 w-3" />
+                    Temporarily Paused
+                  </span>
+                )}
                 <span className="grid h-12 w-12 place-items-center rounded-xl bg-[color:var(--gold)]/10 text-[color:var(--gold)] ring-1 ring-[color:var(--gold)]/30">
                   <s.icon className="h-6 w-6" />
                 </span>

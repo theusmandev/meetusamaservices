@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import { Check, ArrowRight, Clock, ShieldCheck, Sparkles } from "lucide-react";
+import { Check, ArrowRight, Clock, ShieldCheck, Sparkles, AlertTriangle } from "lucide-react";
 import { PageHero, CTABand } from "./page-hero";
 import type { LucideIcon, ReactNode } from "lucide-react";
 import { ScrollReveal } from "./ScrollReveal";
+import { SERVICE_STATUS } from "../data/serviceStatus";
 
 export interface ServiceDetail {
   eyebrow: string;
@@ -21,6 +22,14 @@ export interface ServiceDetail {
 export function ServicePage({ data }: { data: ServiceDetail }) {
   const numericPrice = data.price.replace(/[^0-9]/g, "");
   const Icon = data.icon;
+
+  // Derive the service's lookup key (title + gold, trimmed, period stripped) —
+  // matching the keys used in ServiceStatus and the payment page URL param.
+  const serviceKey = (data.title + " " + data.gold).trim().replace(/\.$/, "");
+  const paused = SERVICE_STATUS[serviceKey] === "paused";
+
+  const paymentUrl = `/payment?service=${encodeURIComponent(serviceKey)}${numericPrice ? `&price=${numericPrice}` : ""}`;
+
   return (
     <>
       <PageHero
@@ -29,18 +38,38 @@ export function ServicePage({ data }: { data: ServiceDetail }) {
         subtitle={data.subtitle}
       >
         <div className="flex flex-wrap items-center gap-3">
-          <Link
-            to={`/payment?service=${encodeURIComponent((data.title + " " + data.gold).trim().replace(/\.$/, ""))}${numericPrice ? `&price=${numericPrice}` : ""}`}
-            className="inline-flex items-center gap-2 rounded-full bg-[color:var(--gold)] px-6 py-3 text-sm font-semibold text-black transition hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
-          >
-            Start Now <ArrowRight className="h-4 w-4" />
-          </Link>
-          <Link
-            to="/services"
-            className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
-          >
-            All Services
-          </Link>
+          {paused ? (
+            <>
+              <button
+                disabled
+                aria-disabled="true"
+                className="inline-flex cursor-not-allowed items-center gap-2 rounded-full bg-muted px-6 py-3 text-sm font-semibold text-muted-foreground opacity-60"
+              >
+                Currently Unavailable
+              </button>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
+              >
+                Contact Us for Updates
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link
+                to={paymentUrl}
+                className="inline-flex items-center gap-2 rounded-full bg-[color:var(--gold)] px-6 py-3 text-sm font-semibold text-black transition hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
+              >
+                Start Now <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                to="/services"
+                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
+              >
+                All Services
+              </Link>
+            </>
+          )}
         </div>
       </PageHero>
 
@@ -48,6 +77,24 @@ export function ServicePage({ data }: { data: ServiceDetail }) {
         <div className="container-luxe grid gap-10 lg:grid-cols-[1.4fr_1fr]">
           <ScrollReveal>
             <div>
+              {/* Paused notice banner */}
+              {paused && (
+                <div className="mb-8 flex items-start gap-3 rounded-xl border border-orange-500/30 bg-orange-500/8 px-4 py-4">
+                  <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-orange-500" />
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    <strong className="text-foreground">This service is currently paused and not accepting new orders.</strong>{" "}
+                    Please check back later or{" "}
+                    <Link
+                      to="/contact"
+                      className="font-semibold text-[color:var(--gold)] underline decoration-[color:var(--gold)]/40 underline-offset-2 transition hover:decoration-[color:var(--gold)]"
+                    >
+                      contact us
+                    </Link>{" "}
+                    for more information.
+                  </p>
+                </div>
+              )}
+
               <span className="grid h-14 w-14 place-items-center rounded-2xl bg-black text-[color:var(--gold)]">
                 <Icon className="h-7 w-7" />
               </span>
@@ -102,20 +149,40 @@ export function ServicePage({ data }: { data: ServiceDetail }) {
                   <Check className="h-4 w-4 text-[color:var(--gold)]" /> Post-setup support included
                 </div>
               </div>
-              <Link
-                to={`/payment?service=${encodeURIComponent((data.title + " " + data.gold).trim().replace(/\.$/, ""))}${numericPrice ? `&price=${numericPrice}` : ""}`}
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[color:var(--gold)] px-5 py-3 text-sm font-semibold text-black transition hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
-              >
-                Order Service Now!
-              </Link>
-              <a
-                href="https://wa.me/447824035366"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-semibold transition hover:border-[color:var(--gold)]"
-              >
-                Chat on WhatsApp
-              </a>
+              {paused ? (
+                <>
+                  <button
+                    disabled
+                    aria-disabled="true"
+                    className="mt-6 inline-flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-full bg-muted px-5 py-3 text-sm font-semibold text-muted-foreground opacity-60"
+                  >
+                    Currently Unavailable
+                  </button>
+                  <Link
+                    to="/contact"
+                    className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-semibold transition hover:border-[color:var(--gold)]"
+                  >
+                    Contact Us for Updates
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link
+                    to={paymentUrl}
+                    className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[color:var(--gold)] px-5 py-3 text-sm font-semibold text-black transition hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
+                  >
+                    Order Service Now!
+                  </Link>
+                  <a
+                    href="https://wa.me/447824035366"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-semibold transition hover:border-[color:var(--gold)]"
+                  >
+                    Chat on WhatsApp
+                  </a>
+                </>
+              )}
             </aside>
           </ScrollReveal>
         </div>
