@@ -22,5 +22,6 @@ export const SERVICE_STATUS: Record<string, ServiceStatus> = {
   "Stripe Consultancy": "active",
   "Shopify Store Setup": "paused",
   "TikTok Shop Setup": "active",
+  "TikTok Agency Account": "active",
   "Business Verification": "active",
 };

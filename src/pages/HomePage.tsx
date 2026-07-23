@@ -202,8 +202,9 @@ const services = [
   { icon: DollarSign, title: "PayPal Business Setup", desc: "Verified PayPal Business accounts that hold, receive and withdraw.", to: "/services/paypal" },
   { icon: Zap, title: "Stripe Consultancy", desc: "Stripe activation for global entrepreneurs, agencies and SaaS founders.", to: "/services/stripe" },
   { icon: ShoppingBag, title: "Shopify Store Setup", desc: "End-to-end Shopify launch: theme, products, payments, shipping.", to: "/services/shopify" },
-  { icon: Store, title: "TikTok Shop Setup", desc: "TikTok Shop application, catalog upload, and creator monetization." },
-  { icon: FileCheck2, title: "Business Verification", desc: "KYC, KYB, address verification and platform re-verification support." },
+  { icon: Store, title: "TikTok Shop Setup", desc: "TikTok Shop application, catalog upload, and creator monetization.", to: "/services/tiktok-shop" },
+  { icon: Users, title: "TikTok Agency Account", desc: "TikTok Agency account setup with secure balance protection — website required, no self top-up.", to: "/services/tiktok-agency-account" },
+  { icon: FileCheck2, title: "Business Verification", desc: "KYC, KYB, address verification and platform re-verification support.", to: "/services/business-verification" },
 ];
 
 const why = [

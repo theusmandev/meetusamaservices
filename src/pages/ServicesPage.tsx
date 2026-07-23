@@ -1,7 +1,7 @@
 import { SEO } from "../components/SEO";
 import { Link } from "react-router-dom";
 import {
-  Building2, Landmark, Wallet, CreditCard, DollarSign, Zap, ShoppingBag, Store, FileCheck2, ArrowRight, PauseCircle,
+  Building2, Landmark, Wallet, CreditCard, DollarSign, Zap, ShoppingBag, Store, FileCheck2, ArrowRight, PauseCircle, Users,
 } from "lucide-react";
 import { PageHero, CTABand } from "../components/page-hero";
 import { ScrollReveal } from "../components/ScrollReveal";
@@ -16,6 +16,7 @@ const services = [
   { icon: Zap, title: "Stripe Consultancy", desc: "Stripe activation for SaaS, agencies and global operators.", to: "/services/stripe" },
   { icon: ShoppingBag, title: "Shopify Store Setup", desc: "End-to-end Shopify launch: theme, products, payments, shipping.", to: "/services/shopify" },
   { icon: Store, title: "TikTok Shop Setup", desc: "TikTok Shop application, catalog upload, monetization.", to: "/services/tiktok-shop" },
+  { icon: Users, title: "TikTok Agency Account", desc: "TikTok Agency account setup with secure balance protection — website required, no self top-up.", to: "/services/tiktok-agency-account" },
   { icon: FileCheck2, title: "Business Verification", desc: "KYC, KYB, address verification and platform re-verification.", to: "/services/business-verification" },
 ];
 
