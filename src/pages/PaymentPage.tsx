@@ -5,7 +5,7 @@ import { Copy, Check, Upload, Loader2, CheckCircle2, ArrowLeft, Info, X, Clock }
 import { PageHero } from "../components/page-hero";
 
 // 🔧 Yahan apna Google Apps Script Web App URL daalein (deploy karne ke baad milega)
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbys27wtyItXmdB5L9fLwz4GX9-YZA_EITdS67rIDAM3IusekOpbrH4Sqr94dx6YkFmX/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz4YgT9Fy6xdVaSWHIASzLc0AthMJkgDE-ZynTmLEg-oPj9fDisLirL_OXbPfYEbWMJ/exec";
 
 const PAYMENT_METHODS = {
   easypaisa: {
