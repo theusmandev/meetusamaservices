@@ -47,12 +47,14 @@ export function ServicePage({ data }: { data: ServiceDetail }) {
               >
                 Currently Unavailable
               </button>
-              <Link
-                to="/contact"
+              <a
+                href="https://wa.me/447824035366"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
               >
                 Contact Us for Updates
-              </Link>
+              </a>
             </>
           ) : (
             <>
@@ -84,12 +86,14 @@ export function ServicePage({ data }: { data: ServiceDetail }) {
                   <p className="text-sm leading-relaxed text-muted-foreground">
                     <strong className="text-foreground">This service is currently paused and not accepting new orders.</strong>{" "}
                     Please check back later or{" "}
-                    <Link
-                      to="/contact"
+                    <a
+                      href="https://wa.me/447824035366"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="font-semibold text-[color:var(--gold)] underline decoration-[color:var(--gold)]/40 underline-offset-2 transition hover:decoration-[color:var(--gold)]"
                     >
                       contact us
-                    </Link>{" "}
+                    </a>{" "}
                     for more information.
                   </p>
                 </div>
@@ -158,12 +162,14 @@ export function ServicePage({ data }: { data: ServiceDetail }) {
                   >
                     Currently Unavailable
                   </button>
-                  <Link
-                    to="/contact"
+                  <a
+                    href="https://wa.me/447824035366"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-semibold transition hover:border-[color:var(--gold)]"
                   >
                     Contact Us for Updates
-                  </Link>
+                  </a>
                 </>
               ) : (
                 <>
