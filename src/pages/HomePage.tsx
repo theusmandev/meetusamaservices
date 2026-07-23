@@ -706,25 +706,6 @@ function ContactForm() {
         <Field label="Country" name="Country" placeholder="United Kingdom" autoComplete="country-name" />
         <div className="sm:col-span-2">
           <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-            Service Required
-          </label>
-          <select
-            name="Service"
-            className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-[color:var(--gold)] focus:ring-2 focus:ring-[color:var(--gold)]/30"
-          >
-            <option>UK LTD Registration</option>
-            <option>US LLC Registration</option>
-            <option>Wise Business Consultancy</option>
-            <option>Payoneer Consultancy</option>
-            <option>PayPal Business Setup</option>
-            <option>Stripe Consultancy</option>
-            <option>Shopify Store Setup</option>
-            <option>Amazon Seller Setup</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div className="sm:col-span-2">
-          <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             Message
           </label>
           <textarea

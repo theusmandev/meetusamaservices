@@ -116,14 +116,6 @@ export default function ContactPage() {
                   <Input label="WhatsApp Number" name="WhatsApp" autoComplete="tel" placeholder="+44 7…" />
                   <Input label="Country" name="Country" autoComplete="country-name" placeholder="United Kingdom" />
                   <div className="sm:col-span-2">
-                    <Label>Service Required</Label>
-                    <select name="Service" className={inputCls}>
-                      {["UK LTD Registration", "US LLC Registration", "Wise", "Payoneer", "PayPal", "Stripe", "Shopify", "Amazon", "Other"].map((x) => (
-                        <option key={x}>{x}</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="sm:col-span-2">
                     <Label>Message</Label>
                     <textarea
                       rows={5}
