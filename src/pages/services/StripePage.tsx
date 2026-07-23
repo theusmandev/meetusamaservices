@@ -15,12 +15,13 @@ export default function StripePage() {
       timeline: "2–5 business days",
       price: "5000 PKR",
       includes: [
+        "Application preparation",
         "Entity + Stripe alignment",
         "Business model description",
         "Website compliance review",
         "Bank + payout setup",
         "Verification response management",
-        "First-payment testing",
+        
       ],
       bullets: [
         "The lowest transaction fees for international card acquiring.",

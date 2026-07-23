@@ -149,9 +149,9 @@ export function ServicePage({ data }: { data: ServiceDetail }) {
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <ShieldCheck className="h-4 w-4 text-[color:var(--gold)]" /> 100% compliant filing
                 </div>
-                <div className="flex items-center gap-2 text-muted-foreground">
+                {/* <div className="flex items-center gap-2 text-muted-foreground">
                   <Check className="h-4 w-4 text-[color:var(--gold)]" /> Post-setup support included
-                </div>
+                </div> */}
               </div>
               {paused ? (
                 <>

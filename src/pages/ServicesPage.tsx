@@ -16,7 +16,7 @@ const services = [
   { icon: Zap, title: "Stripe Consultancy", desc: "Stripe activation for SaaS, agencies and global operators.", to: "/services/stripe" },
   { icon: ShoppingBag, title: "Shopify Store Setup", desc: "End-to-end Shopify launch: theme, products, payments, shipping.", to: "/services/shopify" },
   { icon: Store, title: "TikTok Shop Setup", desc: "TikTok Shop application, catalog upload, monetization.", to: "/services/tiktok-shop" },
-  { icon: FileCheck2, title: "Business Verification", desc: "KYC, KYB, address verification and platform re-verification." },
+  { icon: FileCheck2, title: "Business Verification", desc: "KYC, KYB, address verification and platform re-verification.", to: "/services/business-verification" },
 ];
 
 export default function ServicesPage() {
