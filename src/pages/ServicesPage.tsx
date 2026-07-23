@@ -15,7 +15,7 @@ const services = [
   { icon: DollarSign, title: "PayPal Business Setup", desc: "Verified PayPal Business accounts that hold and withdraw.", to: "/services/paypal" },
   { icon: Zap, title: "Stripe Consultancy", desc: "Stripe activation for SaaS, agencies and global operators.", to: "/services/stripe" },
   { icon: ShoppingBag, title: "Shopify Store Setup", desc: "End-to-end Shopify launch: theme, products, payments, shipping.", to: "/services/shopify" },
-  { icon: Store, title: "TikTok Shop Setup", desc: "TikTok Shop application, catalog upload, monetization." },
+  { icon: Store, title: "TikTok Shop Setup", desc: "TikTok Shop application, catalog upload, monetization.", to: "/services/tiktok-shop" },
   { icon: FileCheck2, title: "Business Verification", desc: "KYC, KYB, address verification and platform re-verification." },
 ];
 

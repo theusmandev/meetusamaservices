@@ -24,6 +24,7 @@ import PayoneerPage from "./pages/services/PayoneerPage";
 import PayPalPage from "./pages/services/PayPalPage";
 import StripePage from "./pages/services/StripePage";
 import ShopifyPage from "./pages/services/ShopifyPage";
+import TikTokShopPage from "./pages/services/TikTokShopPage";
 
 function NotFoundPage() {
   return (
@@ -64,6 +65,7 @@ export default function App() {
           <Route path="/services/paypal" element={<PayPalPage />} />
           <Route path="/services/stripe" element={<StripePage />} />
           <Route path="/services/shopify" element={<ShopifyPage />} />
+          <Route path="/services/tiktok-shop" element={<TikTokShopPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
