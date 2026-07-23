@@ -33,7 +33,9 @@ import {
   Plus,
   Minus,
   Quote,
+  PauseCircle,
 } from "lucide-react";
+import { SERVICE_STATUS } from "../data/serviceStatus";
 import { CTABand } from "../components/page-hero";
 
 /* ---------- Reusable counter ---------- */
@@ -372,8 +374,15 @@ function Services() {
 }
 
 function ServiceCard({ icon: Icon, title, desc, to }: { icon: typeof Building2; title: string; desc: string; to?: string }) {
+  const paused = SERVICE_STATUS[title] === "paused";
   const Content = (
-    <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition hover:-translate-y-1 hover:border-[color:var(--gold)]/60 hover:shadow-[0_20px_45px_-20px_rgba(219,166,38,0.5)]">
+    <div className={`group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition hover:-translate-y-1 hover:border-[color:var(--gold)]/60 hover:shadow-[0_20px_45px_-20px_rgba(219,166,38,0.5)] ${paused ? "opacity-75" : ""}`}>
+      {paused && (
+        <span className="absolute right-3 top-3 z-10 inline-flex items-center gap-1 rounded-full border border-border bg-muted px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+          <PauseCircle className="h-3 w-3" />
+          Temporarily Paused
+        </span>
+      )}
       <div
         className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full opacity-0 blur-2xl transition group-hover:opacity-100"
         style={{ background: "radial-gradient(circle, rgba(219,166,38,0.35), transparent 70%)" }}
