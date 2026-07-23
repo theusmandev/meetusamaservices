@@ -178,7 +178,7 @@ export function ServicePage({ data }: { data: ServiceDetail }) {
                     to={paymentUrl}
                     className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[color:var(--gold)] px-5 py-3 text-sm font-semibold text-black transition hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
                   >
-                    Order Service Now!
+                    Place Order
                   </Link>
                   <a
                     href="https://wa.me/447824035366"
