@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { Check, ArrowRight, Clock, ShieldCheck, Sparkles, AlertTriangle } from "lucide-react";
 import { PageHero, CTABand } from "./page-hero";
-import type { LucideIcon, ReactNode } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import type { ReactNode } from "react";
 import { ScrollReveal } from "./ScrollReveal";
 import { SERVICE_STATUS } from "../data/serviceStatus";
 
