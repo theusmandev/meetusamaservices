@@ -6,4 +6,4 @@
  * Set MAINTENANCE_MODE = false →  site behaves normally.
  * ─────────────────────────────────────────────────────────────────────────────
  */
-export const MAINTENANCE_MODE = true;
+export const MAINTENANCE_MODE = false;
