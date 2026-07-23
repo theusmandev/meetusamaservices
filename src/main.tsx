@@ -12,7 +12,7 @@ if (!root) throw new Error("No #root element found");
 createRoot(root).render(
   <StrictMode>
     <HelmetProvider>
-      <BrowserRouter basename="/meetusamaservices">
+      <BrowserRouter>
         <App />
       </BrowserRouter>
     </HelmetProvider>
