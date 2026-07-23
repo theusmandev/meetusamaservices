@@ -16,6 +16,8 @@ import PrivacyPage from "./pages/PrivacyPage";
 import TermsPage from "./pages/TermsPage";
 import PaymentPage from "./pages/PaymentPage";
 import RefundPolicyPage from "./pages/RefundPolicyPage";
+import MaintenancePage from "./pages/MaintenancePage";
+import { MAINTENANCE_MODE } from "./data/siteConfig";
 
 import UKLtdPage from "./pages/services/UKLtdPage";
 import USLlcPage from "./pages/services/USLlcPage";
@@ -49,6 +51,7 @@ function NotFoundPage() {
 }
 
 export default function App() {
+  if (MAINTENANCE_MODE) return <MaintenancePage />;
   return (
     <div className="flex min-h-screen flex-col bg-background">
       {/* Yahan ScrollToTop lagaya gaya hai jo background mein kaam karega  */}
