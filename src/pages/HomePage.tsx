@@ -665,7 +665,7 @@ export function Contact() {
 }
 
 // Google Apps Script endpoint — do not change
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyPEsa5iA2UyMfDVc94B6N-qNp1gCwPOBE3emVwnChuFFmwhIuxhlsU0BlkimQpo10/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyyAFn1-yhpPbIS5dj8Ry2MpYf6IPgfpj_zRP_jh0eu1zJJzqjiqaLuSt_AILh_l_A/exec";
 
 function ContactForm() {
   const [sent, setSent] = useState(false);

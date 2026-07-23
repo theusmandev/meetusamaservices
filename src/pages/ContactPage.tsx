@@ -7,7 +7,7 @@ import { ScrollReveal } from "../components/ScrollReveal";
 
 // Aap ka original Google Apps Script endpoint
 const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbyPEsa5iA2UyMfDVc94B6N-qNp1gCwPOBE3emVwnChuFFmwhIuxhlsU0BlkimQpo10/exec";
+  "https://script.google.com/macros/s/AKfycbyyAFn1-yhpPbIS5dj8Ry2MpYf6IPgfpj_zRP_jh0eu1zJJzqjiqaLuSt_AILh_l_A/exec";
 
 const inputCls =
   "w-full rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground outline-none placeholder:text-muted-foreground/60 focus:border-[color:var(--gold)] focus:ring-2 focus:ring-[color:var(--gold)]/30";
