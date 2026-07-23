@@ -15,7 +15,7 @@ export type ServiceStatus = "active" | "paused";
 
 export const SERVICE_STATUS: Record<string, ServiceStatus> = {
   "UK LTD Registration": "active",
-  "US LLC Registration": "active",
+  "US LLC Registration": "paused",
   "Wise Business Consultancy": "active",
   "Payoneer Consultancy": "active",
   "PayPal Business Setup": "active",
