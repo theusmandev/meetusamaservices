@@ -12,10 +12,10 @@ const APPS_SCRIPT_URL =
 const inputCls =
   "w-full rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground outline-none placeholder:text-muted-foreground/60 focus:border-[color:var(--gold)] focus:ring-2 focus:ring-[color:var(--gold)]/30";
 
-function Label({ children }: { children: React.ReactNode }) {
+function Label({ children, required }: { children: React.ReactNode; required?: boolean }) {
   return (
     <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-      {children}
+      {children}{required && <span className="text-red-500"> *</span>}
     </label>
   );
 }
@@ -23,7 +23,7 @@ function Label({ children }: { children: React.ReactNode }) {
 function Input(p: { label: string; name: string; type?: string; required?: boolean; autoComplete?: string; placeholder?: string }) {
   return (
     <div>
-      <Label>{p.label}</Label>
+      <Label required={p.required}>{p.label}</Label>
       <input
         name={p.name}
         type={p.type ?? "text"}
@@ -111,16 +111,17 @@ export default function ContactPage() {
 
               <form onSubmit={handleSubmit} className="p-8 md:p-12">
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <Input label="Full Name" name="Name" autoComplete="name" required />
-                  <Input label="Email" name="Email" type="email" autoComplete="email" required />
-                  <Input label="WhatsApp Number" name="WhatsApp" autoComplete="tel" placeholder="+44 7…" />
+                  <Input label="Full Name" name="Name" autoComplete="name" placeholder="Jane Smith" required />
+                  <Input label="Email" name="Email" type="email" autoComplete="email" placeholder="jane@company.com" required />
+                  <Input label="WhatsApp Number" name="WhatsApp" autoComplete="tel" placeholder="+44 7…" required />
                   <Input label="Country" name="Country" autoComplete="country-name" placeholder="United Kingdom" />
                   <div className="sm:col-span-2">
-                    <Label>Message</Label>
+                    <Label required>Message</Label>
                     <textarea
+                      required
                       rows={5}
                       name="Message"
-                      placeholder="Tell us about your business…"
+                      placeholder="Tell us a little about your business goals…"
                       spellCheck={false}
                       data-gramm="false"
                       className={inputCls}

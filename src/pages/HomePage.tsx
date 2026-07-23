@@ -702,13 +702,14 @@ function ContactForm() {
         {/* Bug Fix: Sab inputs ke "name" ko Capital kar diya gaya ha (Name, Email, etc.) */}
         <Field label="Full Name" name="Name" placeholder="Jane Smith" autoComplete="name" required />
         <Field label="Email" name="Email" type="email" placeholder="jane@company.com" autoComplete="email" required />
-        <Field label="WhatsApp Number" name="WhatsApp" placeholder="+44 7…" autoComplete="tel" />
+        <Field label="WhatsApp Number" name="WhatsApp" placeholder="+44 7…" autoComplete="tel" required />
         <Field label="Country" name="Country" placeholder="United Kingdom" autoComplete="country-name" />
         <div className="sm:col-span-2">
           <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-            Message
+            Message<span className="text-red-500"> *</span>
           </label>
           <textarea
+            required
             name="Message"
             rows={4}
             placeholder="Tell us a little about your business goals…"
@@ -752,7 +753,7 @@ function Field({
   return (
     <div>
       <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-        {label}
+        {label}{required && <span className="text-red-500"> *</span>}
       </label>
       <input
         name={name}
