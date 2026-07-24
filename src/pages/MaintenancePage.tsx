@@ -36,7 +36,7 @@ export default function MaintenancePage() {
             M
           </span>
           <span className="font-display text-2xl font-bold tracking-tight">
-            Meet Usama <span className="text-[color:var(--gold)]">Services</span>
+            Meet Usama <span className="text-[color:var(--gold)]"></span>
           </span>
         </div>
 

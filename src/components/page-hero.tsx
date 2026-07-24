@@ -63,7 +63,7 @@ export function CTABand() {
                 Launch your global business <span className="text-gradient-gold">with confidence.</span>
               </h2>
               <p className="mt-4 max-w-xl text-white/70">
-                Book a free 30-minute consultation. We'll map your setup, from company
+                Book a 30-minute consultation. We'll map your setup, from company
                 registration to payment accounts, in one call.
               </p>
             </div>
