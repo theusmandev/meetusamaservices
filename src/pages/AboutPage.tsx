@@ -22,7 +22,7 @@ export default function AboutPage() {
         subtitle="Meet Usama Services is a premium consultancy helping international entrepreneurs incorporate, activate payments, and launch eCommerce brands the right way — from day one."
       />
 
-      <section className="bg-background py-20 md:py-28">
+      <section className="bg-background pt-10 pb-20 md:pt-14 md:pb-28">
         <div className="container-luxe grid gap-12 lg:grid-cols-2 lg:items-center">
           <ScrollReveal>
             <div>

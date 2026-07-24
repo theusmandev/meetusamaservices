@@ -26,7 +26,7 @@ export default function FAQPage() {
         title={<>Answers to the <span className="text-gradient-gold">questions that matter.</span></>}
         subtitle="Everything you need to know before working with us."
       />
-      <section className="bg-background pt-20 pb-0 md:pt-28 md:pb-0">
+      <section className="bg-background pt-10 pb-0 md:pt-14 md:pb-0">
         <ScrollReveal>
           <div className="container-luxe mx-auto max-w-3xl space-y-3">
             {faqs.map((f, i) => {

@@ -76,7 +76,7 @@ export default function ContactPage() {
         subtitle="Share a few details and we'll get back within one business day with a clear roadmap and honest pricing."
       />
 
-      <section className="bg-background py-20 md:py-28">
+      <section className="bg-background pt-10 pb-20 md:pt-14 md:pb-28">
         <div className="container-luxe">
           <ScrollReveal>
             <div className="grid overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-luxe)] lg:grid-cols-[1fr_1.2fr]">

@@ -16,7 +16,7 @@ export default function BlogPage() {
         subtitle="Practical guides and behind-the-scenes insights from our consultancy work."
       />
 
-      <section className="bg-background pt-20 pb-0 md:pt-28 md:pb-0">
+      <section className="bg-background pt-10 pb-0 md:pt-14 md:pb-0">
         <div className="container-luxe grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post, index) => (
             <ScrollReveal key={post.slug} delay={(index % 3) * 100}>
