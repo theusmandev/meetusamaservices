@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Check, ArrowRight, Clock, ShieldCheck, Sparkles, AlertTriangle } from "lucide-react";
+import { Check, Clock, ShieldCheck, Sparkles, AlertTriangle } from "lucide-react";
 import { PageHero, CTABand } from "./page-hero";
 import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
@@ -37,44 +37,8 @@ export function ServicePage({ data }: { data: ServiceDetail }) {
         eyebrow={data.eyebrow}
         title={<>{data.title} <span className="text-gradient-gold">{data.gold}</span></>}
         subtitle={data.subtitle}
-      >
-        <div className="flex flex-wrap items-center gap-3">
-          {paused ? (
-            <>
-              <button
-                disabled
-                aria-disabled="true"
-                className="inline-flex cursor-not-allowed items-center gap-2 rounded-full bg-muted px-6 py-3 text-sm font-semibold text-muted-foreground opacity-60"
-              >
-                Currently Unavailable
-              </button>
-              <a
-                href="https://wa.me/447824035366"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
-              >
-                Contact Us for Updates
-              </a>
-            </>
-          ) : (
-            <>
-              <Link
-                to={paymentUrl}
-                className="inline-flex items-center gap-2 rounded-full bg-[color:var(--gold)] px-6 py-3 text-sm font-semibold text-black transition hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
-              >
-                Start Now <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                to="/services"
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
-              >
-                All Services
-              </Link>
-            </>
-          )}
-        </div>
-      </PageHero>
+      />
+
 
       <section className="bg-background py-20 md:py-28">
         <div className="container-luxe grid gap-10 lg:grid-cols-[1.4fr_1fr]">
