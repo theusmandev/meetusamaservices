@@ -8,8 +8,8 @@ export default function BusinessVerificationPage() {
       <SEO title="Uk LTD Director Verification | Meet Usama Services" description="Verify your UK LTD director details and maintain company compliance with expert assistance." />
       <ServicePage data={{
       eyebrow: "Service · Compliance",
-      title: "UK LTD Director",
-      gold: "Verification.",
+      title: "UK LTD",
+      gold: "Director Verification.",
       subtitle: "Ensure your UK LTD director details match official records to maintain compliance and avoid account holds.",
       icon: FileCheck2,
       timeline: "2–5 business days",

@@ -43,7 +43,7 @@ export function SiteFooter() {
                 M
               </span>
               <span className="font-display text-xl font-bold">
-                Meet Usama <span className="text-[color:var(--gold)]">Services</span>
+                Meet Usama <span className="text-[color:var(--gold)]"></span>
               </span>
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">

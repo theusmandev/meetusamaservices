@@ -37,8 +37,8 @@ export function SiteHeader() {
           <span className="grid h-9 w-9 place-items-center rounded-lg bg-[color:var(--gold)] font-display text-lg font-black text-black">
             M
           </span>
-          <span className="font-display text-lg font-bold tracking-tight text-white">
-            Meet Usama <span className="text-[color:var(--gold)]">Services</span>
+          <span className="font-display text-lg font-bold tracking-tight text-white">Meet Usama
+            <span className="text-[color:var(--gold)]"></span>
           </span>
         </Link>
 
