@@ -98,7 +98,7 @@ export function SiteFooter() {
            
             
             
-          <div className="mt-6 flex gap-3">
+          <div className="mt-6 flex justify-center gap-3 md:justify-start">
               {[
                 { Icon: Youtube, url: "https://www.youtube.com/@meetusama" },
                 { Icon: Instagram, url: "https://www.instagram.com/meet_usama" },
@@ -122,7 +122,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row sm:items-center">
+        <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-center text-xs text-white/50 sm:flex-row sm:text-left">
           <p>© {new Date().getFullYear()} Meet Usama. All rights reserved.</p>
           {/* <p>Crafted with precision for global entrepreneurs.</p> */}
         </div>
