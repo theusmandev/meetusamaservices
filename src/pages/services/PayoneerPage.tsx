@@ -5,7 +5,7 @@ import { ServicePage } from "../../components/service-page";
 export default function PayoneerPage() {
   return (
     <>
-      <SEO title="Payoneer Consultancy | Meet Usama Services" description="Payoneer account setup for freelancers and marketplace sellers, handled from application to approval." />
+      <SEO title="Payoneer Business Creation | Meet Usama Services" description="Payoneer account setup for freelancers and marketplace sellers, handled from application to approval." />
       <ServicePage data={{
       eyebrow: "Service · Payments",
       title: "Payoneer",

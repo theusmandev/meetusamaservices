@@ -11,7 +11,7 @@ const services = [
   { icon: Building2, title: "UK LTD Registration", desc: "Full UK Limited company formation, HMRC compliance and address.", to: "/services/uk-ltd" },
   { icon: Landmark, title: "US LLC Registration", desc: "US LLC formation in Wyoming, Delaware or New Mexico with EIN.", to: "/services/us-llc" },
   { icon: Wallet, title: "Wise Business Consultancy", desc: "Multi-currency Wise Business accounts with clean approval.", to: "/services/wise" },
-  { icon: CreditCard, title: "Payoneer Consultancy", desc: "Payoneer setup for freelancers and marketplace sellers.", to: "/services/payoneer" },
+  { icon: CreditCard, title: "Payoneer Business Creation", desc: "Payoneer setup for freelancers and marketplace sellers.", to: "/services/payoneer" },
   { icon: DollarSign, title: "PayPal Business Setup", desc: "Verified PayPal Business accounts that hold and withdraw.", to: "/services/paypal" },
   { icon: Zap, title: "Stripe Consultancy", desc: "Stripe activation for SaaS, agencies and global operators.", to: "/services/stripe" },
   { icon: ShoppingBag, title: "Shopify Store Setup", desc: "End-to-end Shopify launch: theme, products, payments, shipping.", to: "/services/shopify" },
