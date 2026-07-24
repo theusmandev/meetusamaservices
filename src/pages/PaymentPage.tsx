@@ -23,20 +23,7 @@ const PAYMENT_METHODS = {
       { label: "JazzCash Number", value: "0300-00000000" },
     ],
   },
-  payfast: {
-    label: "Payfast",
-    fields: [
-      { label: "Account Title", value: "Meet Usama" },
-      { label: "Payfast Integration", value: "None" },
-    ],
-  },
-  crypto: {
-    label: "Crypto (USDT – TRC20)",
-    fields: [
-      { label: "Network", value: "TRC20 (Tron)" },
-      { label: "Wallet Address", value: "TXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" },
-    ],
-  },
+
   bank: {
     label: "Bank Transfer",
     fields: [
@@ -44,6 +31,13 @@ const PAYMENT_METHODS = {
       { label: "Account Title", value: "Meet Usama" },
       { label: "Account Number", value: "00000000000" },
       { label: "IBAN", value: "PK00MEZN00000000000000" },
+    ],
+  },
+  crypto: {
+    label: "Crypto (USDT – TRC20)",
+    fields: [
+      { label: "Network", value: "TRC20 (Tron)" },
+      { label: "Wallet Address", value: "TXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" },
     ],
   },
 } as const;
@@ -530,7 +524,7 @@ export default function PaymentPage() {
               <label className="mb-2 block text-sm font-semibold">
                 Select Payment Method <span className="text-red-500">*</span>
               </label>
-              <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+              <div className="grid grid-cols-2 gap-2.5">
                 {(Object.keys(PAYMENT_METHODS) as MethodKey[]).map((key) => (
                   <button
                     key={key}
