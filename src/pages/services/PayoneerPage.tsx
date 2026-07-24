@@ -42,7 +42,7 @@ export default function PayoneerPage() {
             Payoneer Business is often the more reliable option compared to Wise for Pakistan-based
             founders.{" "}
             <a
-              href="/meetusamaservices/blog/wise-usd-account-pakistan"
+              href="/blog/wise-usd-account-pakistan"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-[color:var(--gold)] underline decoration-[color:var(--gold)]/40 underline-offset-2 transition hover:decoration-[color:var(--gold)]"

@@ -41,7 +41,7 @@ export default function WisePage() {
             Wise does not provide USD account details to Pakistan-based users due to a residency
             restriction — even if you have a UK LTD or US LLC.{" "}
             <a
-              href="/meetusamaservices/blog/wise-usd-account-pakistan"
+              href="/blog/wise-usd-account-pakistan"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-[color:var(--gold)] underline decoration-[color:var(--gold)]/40 underline-offset-2 transition hover:decoration-[color:var(--gold)]"
