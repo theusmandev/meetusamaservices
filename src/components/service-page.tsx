@@ -99,15 +99,6 @@ export function ServicePage({ data }: { data: ServiceDetail }) {
                   </li>
                 ))}
               </ul>
-
-              <div className="mt-16">
-                <Link
-                  to="/services"
-                  className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground transition hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
-                >
-                  <ArrowLeft className="h-4 w-4" /> Back to All Services
-                </Link>
-              </div>
             </div>
           </ScrollReveal>
 
@@ -164,6 +155,17 @@ export function ServicePage({ data }: { data: ServiceDetail }) {
                 </>
               )}
             </aside>
+          </ScrollReveal>
+
+          <ScrollReveal delay={120} className="lg:col-start-1">
+            <div className="pt-2 lg:pt-8">
+              <Link
+                to="/services"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground transition hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
+              >
+                <ArrowLeft className="h-4 w-4" /> Back to All Services
+              </Link>
+            </div>
           </ScrollReveal>
         </div>
       </section>
