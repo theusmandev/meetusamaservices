@@ -4,6 +4,7 @@ import { ScrollProgress } from "./components/ScrollProgress";
 import { SiteHeader } from "./components/site-header";
 import { SiteFooter } from "./components/site-footer";
 import { FloatingActions } from "./components/floating-actions";
+import { BackToTop } from "./components/BackToTop";
 
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
@@ -86,6 +87,7 @@ export default function App() {
       </main>
       <SiteFooter />
       <FloatingActions />
+      <BackToTop />
     </div>
   );
 }
