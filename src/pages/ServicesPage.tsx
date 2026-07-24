@@ -17,7 +17,7 @@ const services = [
   { icon: ShoppingBag, title: "Shopify Store Designing", desc: "End-to-end Shopify launch: theme, products, payments, shipping.", to: "/services/shopify" },
   { icon: Store, title: "TikTok Shop", desc: "TikTok Shop application, catalog upload, monetization.", to: "/services/tiktok-shop" },
   { icon: Users, title: "TikTok Agency Account", desc: "TikTok Agency account setup with secure balance protection — website required, no self top-up.", to: "/services/tiktok-agency-account" },
-  { icon: FileCheck2, title: "Uk LTD Director Verification", desc: "KYC, KYB, address verification and platform re-verification.", to: "/services/business-verification" },
+  { icon: FileCheck2, title: "Uk LTD Director Verification", desc: "KYC, KYB, address verification and platform re-verification.", to: "/services/uk-ltd-director-verification" },
 ];
 
 export default function ServicesPage() {

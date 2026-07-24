@@ -2,7 +2,7 @@ import { SEO } from "../../components/SEO";
 import { FileCheck2 } from "lucide-react";
 import { ServicePage } from "../../components/service-page";
 
-export default function BusinessVerificationPage() {
+export default function UKLtdDirectorVerificationPage() {
   return (
     <>
       <SEO title="Uk LTD Director Verification | Meet Usama Services" description="Verify your UK LTD director details and maintain company compliance with expert assistance." />

@@ -28,7 +28,7 @@ import StripePage from "./pages/services/StripePage";
 import ShopifyPage from "./pages/services/ShopifyPage";
 import TikTokShopPage from "./pages/services/TikTokShopPage";
 import TikTokAgencyPage from "./pages/services/TikTokAgencyPage";
-import BusinessVerificationPage from "./pages/services/BusinessVerificationPage";
+import UKLtdDirectorVerificationPage from "./pages/services/UKLtdDirectorVerificationPage";
 
 function NotFoundPage() {
   return (
@@ -72,7 +72,7 @@ export default function App() {
           <Route path="/services/shopify" element={<ShopifyPage />} />
           <Route path="/services/tiktok-shop" element={<TikTokShopPage />} />
           <Route path="/services/tiktok-agency-account" element={<TikTokAgencyPage />} />
-          <Route path="/services/business-verification" element={<BusinessVerificationPage />} />
+          <Route path="/services/uk-ltd-director-verification" element={<UKLtdDirectorVerificationPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
