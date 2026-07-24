@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Check, Clock, ShieldCheck, Sparkles, AlertTriangle } from "lucide-react";
+import { Check, Clock, ShieldCheck, Sparkles, AlertTriangle, ArrowLeft } from "lucide-react";
 import { PageHero, CTABand } from "./page-hero";
 import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
@@ -99,6 +99,15 @@ export function ServicePage({ data }: { data: ServiceDetail }) {
                   </li>
                 ))}
               </ul>
+
+              <div className="mt-16">
+                <Link
+                  to="/services"
+                  className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground transition hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
+                >
+                  <ArrowLeft className="h-4 w-4" /> Back to All Services
+                </Link>
+              </div>
             </div>
           </ScrollReveal>
 
