@@ -17,7 +17,7 @@ export const SERVICE_STATUS: Record<string, ServiceStatus> = {
   "UK LTD Registration": "active",
   "US LLC Registration": "paused",
   "Wise Business Consultancy": "active",
-  "Payoneer Business Creation": "active",
+  "Payoneer Business": "active",
   "PayPal Business Setup": "active",
   "Stripe Consultancy": "active",
   "Shopify Store Setup": "paused",
