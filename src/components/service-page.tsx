@@ -40,7 +40,7 @@ export function ServicePage({ data }: { data: ServiceDetail }) {
       />
 
 
-      <section className="bg-background pt-20 pb-0 md:pt-28 md:pb-0">
+      <section className="bg-background pt-8 pb-0 md:pt-10 md:pb-0">
         <div className="container-luxe grid gap-10 lg:grid-cols-[1.4fr_1fr]">
           <ScrollReveal>
             <div>
