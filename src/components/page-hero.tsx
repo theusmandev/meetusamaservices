@@ -68,12 +68,14 @@ export function CTABand() {
               </p>
             </div>
             <div className="flex flex-col gap-3 md:items-end">
-              <Link
-                to="/contact"
+              <a
+                href="https://wa.me/447824035366"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-[color:var(--gold)] px-7 py-3.5 text-sm font-semibold text-black transition hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
               >
                 Send Us a Message
-              </Link>
+              </a>
               <Link
                 to="/services"
                 className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition hover:border-[color:var(--gold)] hover:text-[color:var(--gold)]"
