@@ -5,12 +5,15 @@ import { useNavScroll } from "../hooks/use-nav-scroll";
 const services = [
   { to: "/services/uk-ltd", label: "UK LTD Registration" },
   { to: "/services/us-llc", label: "US LLC Registration" },
-  { to: "/services/wise", label: "Wise Consultancy" },
+  { to: "/services/wise", label: "Wise Business" },
   { to: "/services/payoneer", label: "Payoneer Business" },
-  { to: "/services/paypal", label: "PayPal Consultancy" },
+  { to: "/services/paypal", label: "PayPal Business" },
   { to: "/services/stripe", label: "Stripe Account" },
-  { to: "/services/shopify", label: "Shopify Setup" },
-  { to: "/services/amazon", label: "Amazon Setup" },
+  { to: "/services/shopify", label: "Shopify Store Designing" },
+  { to: "/services/tiktok-shop", label: "TikTok Shop" },
+  { to: "/services/tiktok-agency-account", label: "TikTok Agency Account" },
+  
+
 ] as const;
 
 const links = [

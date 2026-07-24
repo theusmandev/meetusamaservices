@@ -8,8 +8,8 @@ export default function PayPalPage() {
       <SEO title="PayPal Business Account Setup | Meet Usama Services" description="Verified PayPal Business accounts that hold and withdraw reliably — set up by our experienced team." />
       <ServicePage data={{
       eyebrow: "Service · Payments",
-      title: "PayPal Business",
-      gold: "Setup.",
+      title: "PayPal",
+      gold: "Business.",
       subtitle: "A verified PayPal Business account structured to actually work — with clean withdrawal and lower limitation risk.",
       icon: DollarSign,
       timeline: "3–7 business days",
