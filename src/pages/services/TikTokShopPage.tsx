@@ -5,12 +5,12 @@ import { ServicePage } from "../../components/service-page";
 export default function TikTokShopPage() {
   return (
     <>
-      <SEO title="TikTok Shop Setup | Meet Usama Services" description="TikTok Shop application, catalog upload, and monetization setup — done for you by our experts." />
+      <SEO title="TikTok Shop | Meet Usama Services" description="TikTok Shop application, catalog upload, and monetization setup — done for you by our experts." />
       <ServicePage data={{
       eyebrow: "Service · eCommerce",
       title: "TikTok Shop",
       gold: "Setup.",
-      subtitle: "Launch your TikTok Shop with proper business verification, catalog setup, and payment integration.",
+      subtitle: "Launch your TikTok Shop with proper Uk LTD Director Verification, catalog setup, and payment integration.",
       icon: Store,
       timeline: "3–7 business days",
       price: "20000 PKR",

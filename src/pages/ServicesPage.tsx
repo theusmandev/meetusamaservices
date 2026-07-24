@@ -10,14 +10,14 @@ import { SERVICE_STATUS } from "../data/serviceStatus";
 const services = [
   { icon: Building2, title: "UK LTD Registration", desc: "Full UK Limited company formation, HMRC compliance and address.", to: "/services/uk-ltd" },
   { icon: Landmark, title: "US LLC Registration", desc: "US LLC formation in Wyoming, Delaware or New Mexico with EIN.", to: "/services/us-llc" },
-  { icon: Wallet, title: "Wise Business Consultancy", desc: "Multi-currency Wise Business accounts with clean approval.", to: "/services/wise" },
+  { icon: Wallet, title: "Wise Business", desc: "Multi-currency Wise Business accounts with clean approval.", to: "/services/wise" },
   { icon: CreditCard, title: "Payoneer Business", desc: "Payoneer setup for freelancers and marketplace sellers.", to: "/services/payoneer" },
-  { icon: DollarSign, title: "PayPal Business Setup", desc: "Verified PayPal Business accounts that hold and withdraw.", to: "/services/paypal" },
-  { icon: Zap, title: "Stripe Consultancy", desc: "Stripe activation for SaaS, agencies and global operators.", to: "/services/stripe" },
-  { icon: ShoppingBag, title: "Shopify Store Setup", desc: "End-to-end Shopify launch: theme, products, payments, shipping.", to: "/services/shopify" },
-  { icon: Store, title: "TikTok Shop Setup", desc: "TikTok Shop application, catalog upload, monetization.", to: "/services/tiktok-shop" },
+  { icon: DollarSign, title: "PayPal Business", desc: "Verified PayPal Business accounts that hold and withdraw.", to: "/services/paypal" },
+  { icon: Zap, title: "Stripe Account", desc: "Stripe activation for SaaS, agencies and global operators.", to: "/services/stripe" },
+  { icon: ShoppingBag, title: "Shopify Store Designing", desc: "End-to-end Shopify launch: theme, products, payments, shipping.", to: "/services/shopify" },
+  { icon: Store, title: "TikTok Shop", desc: "TikTok Shop application, catalog upload, monetization.", to: "/services/tiktok-shop" },
   { icon: Users, title: "TikTok Agency Account", desc: "TikTok Agency account setup with secure balance protection — website required, no self top-up.", to: "/services/tiktok-agency-account" },
-  { icon: FileCheck2, title: "Business Verification", desc: "KYC, KYB, address verification and platform re-verification.", to: "/services/business-verification" },
+  { icon: FileCheck2, title: "Uk LTD Director Verification", desc: "KYC, KYB, address verification and platform re-verification.", to: "/services/business-verification" },
 ];
 
 export default function ServicesPage() {

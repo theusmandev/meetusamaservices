@@ -16,12 +16,12 @@ export type ServiceStatus = "active" | "paused";
 export const SERVICE_STATUS: Record<string, ServiceStatus> = {
   "UK LTD Registration": "active",
   "US LLC Registration": "paused",
-  "Wise Business Consultancy": "active",
+  "Wise Business": "active",
   "Payoneer Business": "active",
-  "PayPal Business Setup": "active",
-  "Stripe Consultancy": "active",
-  "Shopify Store Setup": "paused",
-  "TikTok Shop Setup": "active",
+  "PayPal Business": "active",
+  "Stripe Account": "active",
+  "Shopify Store Designing": "paused",
+  "TikTok Shop": "active",
   "TikTok Agency Account": "active",
-  "Business Verification": "active",
+  "Uk LTD Director Verification": "active",
 };

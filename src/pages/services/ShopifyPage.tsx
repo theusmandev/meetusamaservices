@@ -5,7 +5,7 @@ import { ServicePage } from "../../components/service-page";
 export default function ShopifyPage() {
   return (
     <>
-      <SEO title="Shopify Store Setup | Meet Usama Services" description="End-to-end Shopify launch — theme, products, payments, and shipping — built and configured for you." />
+      <SEO title="Shopify Store Designing | Meet Usama Services" description="End-to-end Shopify launch — theme, products, payments, and shipping — built and configured for you." />
       <ServicePage data={{
       eyebrow: "Service · eCommerce",
       title: "Shopify Store",

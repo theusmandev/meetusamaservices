@@ -8,7 +8,7 @@ const services = [
   { to: "/services/wise", label: "Wise Consultancy" },
   { to: "/services/payoneer", label: "Payoneer Business" },
   { to: "/services/paypal", label: "PayPal Consultancy" },
-  { to: "/services/stripe", label: "Stripe Consultancy" },
+  { to: "/services/stripe", label: "Stripe Account" },
   { to: "/services/shopify", label: "Shopify Setup" },
   { to: "/services/amazon", label: "Amazon Setup" },
 ] as const;
