@@ -8,8 +8,8 @@ export default function ShopifyPage() {
       <SEO title="Shopify Store Designing | Meet Usama Services" description="End-to-end Shopify launch — theme, products, payments, and shipping — built and configured for you." />
       <ServicePage data={{
       eyebrow: "Service · eCommerce",
-      title: "Shopify Store",
-      gold: "Designing.",
+      title: "Shopify",
+      gold: "Store Designing.",
       subtitle: "A launch-ready Shopify store designed to convert — theme, products, payments, shipping, and pre-launch QA.",
       icon: ShoppingBag,
       timeline: "7–14 business days",

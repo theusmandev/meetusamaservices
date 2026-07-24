@@ -8,8 +8,8 @@ export default function TikTokAgencyPage() {
       <SEO title="TikTok Agency Account | Meet Usama Services" description="TikTok Agency account setup with secure balance protection — managed for you." />
       <ServicePage data={{
       eyebrow: "Service · Advertising",
-      title: "TikTok Agency",
-      gold: "Account.",
+      title: "TikTok",
+      gold: "Agency Account.",
       subtitle: "Run your TikTok ad campaigns smoothly through a dedicated agency account, with balance protection and expert support.",
       icon: Users,
       timeline: "3–7 business days",
