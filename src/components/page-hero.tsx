@@ -25,7 +25,7 @@ export function PageHero({
         className="pointer-events-none absolute inset-x-0 top-0 h-px"
         style={{ background: "linear-gradient(90deg, transparent, #DBA626, transparent)" }}
       />
-      <div className="container-luxe relative py-20 md:py-28">
+      <div className="container-luxe relative py-16 md:py-20">
         {eyebrow && (
           <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-[color:var(--gold)]/40 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--gold)]">
             {eyebrow}
