@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { CalendarCheck } from "lucide-react";
+
 
 // Inline WhatsApp SVG logo — no extra dependency needed
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -19,14 +18,6 @@ function WhatsAppIcon({ className }: { className?: string }) {
 export function FloatingActions() {
   return (
     <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-3">
-      <Link
-        to="/contact"
-        className="group hidden items-center gap-2 rounded-full bg-black px-5 py-3 text-sm font-semibold text-white shadow-2xl ring-1 ring-[color:var(--gold)]/50 transition hover:-translate-y-0.5 hover:bg-[color:var(--gold)] hover:text-black sm:inline-flex"
-      >
-        <CalendarCheck className="h-4 w-4 text-[color:var(--gold)] group-hover:text-black" />
-        Book Consultation
-      </Link>
-
       {/* WhatsApp floating button with pulse ring */}
       <div className="relative">
         {/* Pulse ring */}

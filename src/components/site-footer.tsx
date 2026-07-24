@@ -12,8 +12,7 @@ const services = [
   { to: "/services/shopify", label: "Shopify Store Designing" },
   { to: "/services/tiktok-shop", label: "TikTok Shop" },
   { to: "/services/tiktok-agency-account", label: "TikTok Agency Account" },
-  
-
+  { to: "/services/uk-ltd-director-verification", label: "UK LTD Director Verification" },
 ] as const;
 
 const links = [
@@ -77,7 +76,7 @@ export function SiteFooter() {
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white">Services</h4>
             <ul className="mt-5 space-y-3 text-sm text-white/70">
-              {services.slice(0, 6).map((l) => (
+              {services.map((l) => (
                 <li key={l.to}>
                   <Link to={l.to} onClick={handleNavClick(l.to)} className="transition hover:text-[color:var(--gold)]">{l.label}</Link>
                 </li>
