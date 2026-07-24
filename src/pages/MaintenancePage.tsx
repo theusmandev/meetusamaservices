@@ -102,7 +102,7 @@ export default function MaintenancePage() {
 
         {/* Footer note */}
         <p className="mt-12 text-xs text-white/30">
-          © {new Date().getFullYear()} Meet Usama Services. All rights reserved.
+          © {new Date().getFullYear()} Meet Usama. All rights reserved.
         </p>
       </div>
     </div>

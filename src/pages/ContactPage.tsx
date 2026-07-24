@@ -68,7 +68,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <SEO title="Contact Us | Meet Usama Services" description="Get in touch with Meet Usama Services for a free consultation on company registration and international payment accounts." />
+      <SEO title="Contact Us | Meet Usama" description="Get in touch with Meet Usama for a free consultation on company registration and international payment accounts." />
       <>
       <PageHero
         eyebrow="Contact"

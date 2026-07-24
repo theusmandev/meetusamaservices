@@ -15,7 +15,7 @@ import {
 export default function RefundPolicyPage() {
   return (
     <>
-      <SEO title="Refund Policy | Meet Usama Services" description="Read our refund policy before making a payment for any Meet Usama Services consultancy service." />
+      <SEO title="Refund Policy | Meet Usama" description="Read our refund policy before making a payment for any Meet Usama consultancy service." />
       <>
       <PageHero
         eyebrow="Legal"
@@ -32,7 +32,7 @@ export default function RefundPolicyPage() {
                 Nature of Our Services
               </h2>
               <p className="mt-4 text-muted-foreground">
-                Meet Usama Services provides digital consultancy and business support services. We
+                Meet Usama provides digital consultancy and business support services. We
                 assist clients with setting up and verifying business accounts on platforms such as
                 Wise, PayPal, Stripe, Payoneer, and other financial or business service providers.
               </p>
@@ -230,7 +230,7 @@ export default function RefundPolicyPage() {
                 Acceptance of This Policy
               </h2>
               <p className="mt-4 text-muted-foreground">
-                By purchasing any service from Meet Usama Services, you confirm that:
+                By purchasing any service from Meet Usama, you confirm that:
               </p>
               <ul className="ml-5 mt-3 list-disc space-y-2 text-muted-foreground">
                 <li>You have read and understood this Refund Policy.</li>

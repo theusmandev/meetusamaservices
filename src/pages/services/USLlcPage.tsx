@@ -5,7 +5,7 @@ import { ServicePage } from "../../components/service-page";
 export default function USLlcPage() {
   return (
     <>
-      <SEO title="US LLC Formation (Wyoming, Delaware, New Mexico) | Meet Usama Services" description="US LLC formation for non-residents with a matching EIN — fast, compliant, and built for global founders." />
+      <SEO title="US LLC Formation (Wyoming, Delaware, New Mexico) | Meet Usama" description="US LLC formation for non-residents with a matching EIN — fast, compliant, and built for global founders." />
       <ServicePage data={{
       eyebrow: "Service · US",
       title: "US LLC",

@@ -14,7 +14,7 @@ const sections = [
 export default function TermsPage() {
   return (
     <>
-      <SEO title="Terms & Conditions | Meet Usama Services" description="The terms and conditions governing use of Meet Usama Services and our consultancy services." />
+      <SEO title="Terms & Conditions | Meet Usama" description="The terms and conditions governing use of Meet Usama and our consultancy services." />
       <>
       <PageHero eyebrow="Legal" title="Terms & Conditions" subtitle="Last updated: January 2026" />
       <section className="bg-background py-16 md:py-24">

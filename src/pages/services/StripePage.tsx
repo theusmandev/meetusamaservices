@@ -5,7 +5,7 @@ import { ServicePage } from "../../components/service-page";
 export default function StripePage() {
   return (
     <>
-      <SEO title="Stripe Approval for Non-US Founders | Meet Usama Services" description="Stripe activation for SaaS founders, agencies, and global operators — we handle the structuring and documentation." />
+      <SEO title="Stripe Approval for Non-US Founders | Meet Usama" description="Stripe activation for SaaS founders, agencies, and global operators — we handle the structuring and documentation." />
       <ServicePage data={{
       eyebrow: "Service · Payments",
       title: "Stripe",

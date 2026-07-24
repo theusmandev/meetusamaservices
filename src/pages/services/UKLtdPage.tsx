@@ -5,7 +5,7 @@ import { ServicePage } from "../../components/service-page";
 export default function UKLtdPage() {
   return (
     <>
-      <SEO title="UK LTD Registration for Non-Residents | Meet Usama Services" description="Full UK Limited company formation, HMRC compliance, and registered address — done for you by experienced consultants." />
+      <SEO title="UK LTD Registration for Non-Residents | Meet Usama" description="Full UK Limited company formation, HMRC compliance, and registered address — done for you by experienced consultants." />
       <ServicePage data={{
       eyebrow: "Service · UK",
       title: "UK LTD",

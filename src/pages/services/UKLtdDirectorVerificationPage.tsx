@@ -5,7 +5,7 @@ import { ServicePage } from "../../components/service-page";
 export default function UKLtdDirectorVerificationPage() {
   return (
     <>
-      <SEO title="Uk LTD Director Verification | Meet Usama Services" description="Verify your UK LTD director details and maintain company compliance with expert assistance." />
+      <SEO title="Uk LTD Director Verification | Meet Usama" description="Verify your UK LTD director details and maintain company compliance with expert assistance." />
       <ServicePage data={{
       eyebrow: "Service · Compliance",
       title: "UK LTD",

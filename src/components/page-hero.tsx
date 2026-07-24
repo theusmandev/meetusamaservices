@@ -74,7 +74,7 @@ export function CTABand() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-[color:var(--gold)] px-7 py-3.5 text-sm font-semibold text-black transition hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
               >
-                Send Us a Message
+                Chat on WhatsApp
               </a>
               <Link
                 to="/services"

@@ -23,7 +23,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
-      <SEO title="Our Services | Company Registration &amp; Payment Accounts — Meet Usama Services" description="From UK LTD and US LLC formation to Wise, Stripe, PayPal, and Shopify setup — explore our full range of global business consultancy services." />
+      <SEO title="Our Services | Company Registration &amp; Payment Accounts — Meet Usama" description="From UK LTD and US LLC formation to Wise, Stripe, PayPal, and Shopify setup — explore our full range of global business consultancy services." />
       <>
       <PageHero
         eyebrow="Services"

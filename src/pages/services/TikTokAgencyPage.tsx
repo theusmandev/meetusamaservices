@@ -5,7 +5,7 @@ import { ServicePage } from "../../components/service-page";
 export default function TikTokAgencyPage() {
   return (
     <>
-      <SEO title="TikTok Agency Account | Meet Usama Services" description="TikTok Agency account setup with secure balance protection — managed for you." />
+      <SEO title="TikTok Agency Account | Meet Usama" description="TikTok Agency account setup with secure balance protection — managed for you." />
       <ServicePage data={{
       eyebrow: "Service · Advertising",
       title: "TikTok",

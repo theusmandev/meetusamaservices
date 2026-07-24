@@ -123,7 +123,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} Meet Usama Services. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Meet Usama. All rights reserved.</p>
           {/* <p>Crafted with precision for global entrepreneurs.</p> */}
         </div>
       </div>

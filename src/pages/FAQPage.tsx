@@ -19,7 +19,7 @@ export default function FAQPage() {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <>
-      <SEO title="Frequently Asked Questions | Meet Usama Services" description="Answers to common questions about company registration, payment account setup, pricing, and our process." />
+      <SEO title="Frequently Asked Questions | Meet Usama" description="Answers to common questions about company registration, payment account setup, pricing, and our process." />
       <>
       <PageHero
         eyebrow="FAQ"

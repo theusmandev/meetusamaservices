@@ -288,7 +288,7 @@ function Hero() {
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full bg-[color:var(--gold)] px-6 py-3.5 text-sm font-semibold text-black shadow-[0_15px_40px_-12px_rgba(219,166,38,0.7)] transition hover:-translate-y-0.5 hover:scale-[1.03] hover:bg-[color:var(--gold-hover)] hover:shadow-lg hover:shadow-[color:var(--gold)]/20"
               >
-                Send Us a Message
+                Chat on WhatsApp
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </a>
               <Link
@@ -785,7 +785,7 @@ function Field({
 export default function HomePage() {
   return (
     <>
-      <SEO title="Meet Usama Services — Global Business & Payment Consultancy" description="Register UK LTD & US LLC companies, open Wise, Payoneer, PayPal & Stripe accounts, and launch Shopify stores worldwide — done for you by experienced consultants." />
+      <SEO title="Meet Usama — Global Business & Payment Consultancy" description="Register UK LTD & US LLC companies, open Wise, Payoneer, PayPal & Stripe accounts, and launch Shopify stores worldwide — done for you by experienced consultants." />
       <>
       <Hero />
       <Stats />

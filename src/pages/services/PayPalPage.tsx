@@ -5,7 +5,7 @@ import { ServicePage } from "../../components/service-page";
 export default function PayPalPage() {
   return (
     <>
-      <SEO title="PayPal Business Account Setup | Meet Usama Services" description="Verified PayPal Business accounts that hold and withdraw reliably — set up by our experienced team." />
+      <SEO title="PayPal Business Account Setup | Meet Usama" description="Verified PayPal Business accounts that hold and withdraw reliably — set up by our experienced team." />
       <ServicePage data={{
       eyebrow: "Service · Payments",
       title: "PayPal",

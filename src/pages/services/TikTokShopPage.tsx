@@ -5,7 +5,7 @@ import { ServicePage } from "../../components/service-page";
 export default function TikTokShopPage() {
   return (
     <>
-      <SEO title="TikTok Shop | Meet Usama Services" description="TikTok Shop application, catalog upload, and monetization setup — done for you by our experts." />
+      <SEO title="TikTok Shop | Meet Usama" description="TikTok Shop application, catalog upload, and monetization setup — done for you by our experts." />
       <ServicePage data={{
       eyebrow: "Service · eCommerce",
       title: "TikTok",

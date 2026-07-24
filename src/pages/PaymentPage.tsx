@@ -12,21 +12,21 @@ const PAYMENT_METHODS = {
   easypaisa: {
     label: "Easypaisa",
     fields: [
-      { label: "Account Title", value: "Meet Usama Services" },
+      { label: "Account Title", value: "Meet Usama" },
       { label: "Easypaisa Number", value: "0300-00000000" },
     ],
   },
   jazzcash: {
     label: "JazzCash",
     fields: [
-      { label: "Account Title", value: "Meet Usama Services" },
+      { label: "Account Title", value: "Meet Usama" },
       { label: "JazzCash Number", value: "0300-00000000" },
     ],
   },
   payfast: {
     label: "Payfast",
     fields: [
-      { label: "Account Title", value: "Meet Usama Services" },
+      { label: "Account Title", value: "Meet Usama" },
       { label: "Payfast Integration", value: "None" },
     ],
   },
@@ -41,7 +41,7 @@ const PAYMENT_METHODS = {
     label: "Bank Transfer",
     fields: [
       { label: "Bank Name", value: "Meezan Bank" },
-      { label: "Account Title", value: "Meet Usama Services" },
+      { label: "Account Title", value: "Meet Usama" },
       { label: "Account Number", value: "00000000000" },
       { label: "IBAN", value: "PK00MEZN00000000000000" },
     ],
@@ -393,7 +393,7 @@ export default function PaymentPage() {
 
   return (
     <>
-      <SEO title="Complete Your Payment | Meet Usama Services" description="Secure payment page for Meet Usama Services clients." noindex={true} />
+      <SEO title="Complete Your Payment | Meet Usama" description="Secure payment page for Meet Usama clients." noindex={true} />
       <>
       {/* Refund policy modal */}
       {showModal && (

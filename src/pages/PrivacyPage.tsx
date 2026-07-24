@@ -14,14 +14,14 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <>
-      <SEO title="Privacy Policy | Meet Usama Services" description="How Meet Usama Services collects, uses, and protects your personal information." />
+      <SEO title="Privacy Policy | Meet Usama" description="How Meet Usama collects, uses, and protects your personal information." />
       <>
       <PageHero eyebrow="Legal" title="Privacy Policy" subtitle="Last updated: January 2026" />
       <section className="bg-background py-16 md:py-24">
         <ScrollReveal>
           <article className="container-luxe prose prose-neutral mx-auto max-w-3xl">
             <p className="text-muted-foreground">
-              This page is maintained by Meet Usama Services and describes how we
+              This page is maintained by Meet Usama and describes how we
               handle personal information collected through our website and during
               client engagements.
             </p>

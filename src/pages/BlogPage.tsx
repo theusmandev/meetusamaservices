@@ -8,7 +8,7 @@ import { blogPosts } from "../data/blogPosts";
 export default function BlogPage() {
   return (
     <>
-      <SEO title="Blog | Meet Usama Services" description="Practical guides and insights on company formation, Stripe, PayPal, and Wise approval for global founders." />
+      <SEO title="Blog | Meet Usama" description="Practical guides and insights on company formation, Stripe, PayPal, and Wise approval for global founders." />
       <>
       <PageHero
         eyebrow="Blog"

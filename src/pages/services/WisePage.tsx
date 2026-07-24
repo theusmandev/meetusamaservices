@@ -5,7 +5,7 @@ import { ServicePage } from "../../components/service-page";
 export default function WisePage() {
   return (
     <>
-      <SEO title="Wise Business Account Setup | Meet Usama Services" description="Multi-currency Wise Business accounts with clean, reliable approval — set up end-to-end by our consultancy team." />
+      <SEO title="Wise Business Account Setup | Meet Usama" description="Multi-currency Wise Business accounts with clean, reliable approval — set up end-to-end by our consultancy team." />
       <ServicePage data={{
       eyebrow: "Service · Payments",
       title: "Wise",

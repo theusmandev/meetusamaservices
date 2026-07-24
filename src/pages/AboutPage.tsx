@@ -14,12 +14,12 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <SEO title="About Us | Meet Usama Services" description="Learn about Meet Usama Services — a global business consultancy helping entrepreneurs register companies and open international payment accounts." />
+      <SEO title="About Us | Meet Usama" description="Learn about Meet Usama — a global business consultancy helping entrepreneurs register companies and open international payment accounts." />
       <>
       <PageHero
         eyebrow="About Us"
         title={<>Built for founders who take <span className="text-gradient-gold">business seriously.</span></>}
-        subtitle="Meet Usama Services is a premium consultancy helping international entrepreneurs incorporate, activate payments, and launch eCommerce brands the right way — from day one."
+        subtitle="Meet Usama is a premium consultancy helping international entrepreneurs incorporate, activate payments, and launch eCommerce brands the right way — from day one."
       />
 
       <section className="bg-background pt-10 pb-20 md:pt-14 md:pb-28">
