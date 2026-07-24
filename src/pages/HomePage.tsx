@@ -266,13 +266,13 @@ function Hero() {
         className="pointer-events-none absolute inset-0 opacity-[0.07]"
         style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)", backgroundSize: "48px 48px" }}
       />
-      <div className="container-luxe relative py-16 md:py-24 lg:py-28">
+      <div className="container-luxe relative pt-12 pb-16 md:pt-16 md:pb-20 lg:pt-20 lg:pb-24">
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr]">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-[color:var(--gold)]/40 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--gold)]">
               <Sparkles className="h-3.5 w-3.5" /> Global Business Consultancy
             </p>
-            <h1 className="mt-5 font-display text-4xl font-black leading-[1.05] tracking-tight md:text-6xl lg:text-[4.25rem]">
+            <h1 className="mt-5 font-display text-4xl font-black leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
               Global Business Solutions for{" "}
               <span className="text-gradient-gold">Modern Entrepreneurs</span>
             </h1>
