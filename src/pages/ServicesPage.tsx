@@ -31,7 +31,7 @@ export default function ServicesPage() {
         subtitle="Company incorporation, payment accounts, and eCommerce launch — under one premium roof."
       />
 
-      <section className="bg-background py-20 md:py-28">
+      <section className="bg-background pt-20 pb-0 md:pt-28 md:pb-0">
         <div className="container-luxe grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, index) => {
             const paused = SERVICE_STATUS[s.title] === "paused";
