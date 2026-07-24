@@ -8,8 +8,8 @@ export default function WisePage() {
       <SEO title="Wise Business Account Setup | Meet Usama Services" description="Multi-currency Wise Business accounts with clean, reliable approval — set up end-to-end by our consultancy team." />
       <ServicePage data={{
       eyebrow: "Service · Payments",
-      title: "Wise Business",
-      gold: "Consultancy.",
+      title: "Wise",
+      gold: "Business.",
       subtitle: "A multi-currency Wise Business account — approved the first time, with the right structure for your entity and country.",
       icon: Wallet,
       timeline: "3–7 business days",

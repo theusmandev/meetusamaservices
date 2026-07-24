@@ -9,7 +9,7 @@ export default function PayoneerPage() {
       <ServicePage data={{
       eyebrow: "Service · Payments",
       title: "Payoneer",
-      gold: "Consultancy.",
+      gold: "Business.",
       subtitle: "A verified Payoneer account with local receiving accounts — for freelancers, Amazon, Upwork, Fiverr and beyond.",
       icon: CreditCard,
       timeline: "3–5 business days",

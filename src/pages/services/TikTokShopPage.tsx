@@ -8,8 +8,8 @@ export default function TikTokShopPage() {
       <SEO title="TikTok Shop | Meet Usama Services" description="TikTok Shop application, catalog upload, and monetization setup — done for you by our experts." />
       <ServicePage data={{
       eyebrow: "Service · eCommerce",
-      title: "TikTok Shop",
-      gold: "Setup.",
+      title: "TikTok",
+      gold: "Shop.",
       subtitle: "Launch your TikTok Shop with proper Uk LTD Director Verification, catalog setup, and payment integration.",
       icon: Store,
       timeline: "3–7 business days",

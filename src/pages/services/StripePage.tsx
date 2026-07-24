@@ -9,7 +9,7 @@ export default function StripePage() {
       <ServicePage data={{
       eyebrow: "Service · Payments",
       title: "Stripe",
-      gold: "Consultancy.",
+      gold: "Account.",
       subtitle: "The exact documents, structuring and business-model framing needed to get Stripe approved and processing worldwide.",
       icon: Zap,
       timeline: "2–5 business days",

@@ -9,7 +9,7 @@ export default function ShopifyPage() {
       <ServicePage data={{
       eyebrow: "Service · eCommerce",
       title: "Shopify Store",
-      gold: "Setup.",
+      gold: "Designing.",
       subtitle: "A launch-ready Shopify store designed to convert — theme, products, payments, shipping, and pre-launch QA.",
       icon: ShoppingBag,
       timeline: "7–14 business days",
